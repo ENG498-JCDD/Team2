@@ -2,9 +2,8 @@
 
 **NOTE FOR NEW PROJECT**: Don't forget to update the `observablehq.config.js` file. Delete this paragraph, when completed.
 
-- Name here
-- Name here
-- Name here
+- Josephine Kinsey
+- Lily Soetebier
 
 Enter brief description of the project.
 
