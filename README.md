@@ -1,14 +1,14 @@
-# Enter Title of Project Here
+# Enter Title of Project Here "National Parks and Economic Struggle"
 
 **NOTE FOR NEW PROJECT**: Don't forget to update the `observablehq.config.js` file. Delete this paragraph, when completed.
 
 - Josephine Kinsey
 - Lily Soetebier
+- [Project Tracker](https://docs.google.com/spreadsheets/d/1kkqV6Vr_Or1GaU5Lk8j9iXLMugGUy4Yz/edit?gid=1279484845#gid=1279484845) 
 
-Enter brief description of the project.
+## Project Description
 
-- [Project Tracker]()
-  - **WARNING!**: Be sure to just share the direct URL, since I have added everyone in the class to the Drive folder overall. So, do not provide the "Share" link. We want to make sure the information remains secure.
+Recent executive orders and defunding of departments and agencies in the federal government have resulted in the depletion of resources available for the maintenance of parks and people employed by the National Park Service. Simultaneously, there is a recession (one could argue a depression) being felt throughout the United States. We believe that there could be a link between national parks visitation and economic difficulty. To measure this, we compare the unemployment rates and GDP of states with national parks within them. We want to observe how these rates compare to visitation rates in national park, and share these results with others who value the protection of the U.S. National Parks Service from politically motivated defunding and employment cuts.
 
 ## About the Data
 
