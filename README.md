@@ -7,6 +7,8 @@
 
 Enter brief description of the project.
 
+Recent executive orders and defunding of departments and agencies in the federal government have resulted in the depletion of resources available for the maintenance of parks and people employed by the National Park Service. Simultaneously, there is a recession (one could argue a depression) being felt throughout the United States. We believe that there could be a link between national parks visitation and economic difficulty. To measure this, we compare the unemployment rates and GDP of states with national parks within them. We want to observe how these rates compare to visitation rates in national park, and share these results with others who value the protection of the U.S. National Parks Service from politically motivated defunding and employment cuts.
+
 - [Project Tracker]()
   - **WARNING!**: Be sure to just share the direct URL, since I have added everyone in the class to the Drive folder overall. So, do not provide the "Share" link. We want to make sure the information remains secure.
 
