@@ -8,14 +8,12 @@ import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
 
 ```
 
-```js
-
-```
 
 ```js
 const parkHours = FileAttachment("./../data/NPS/parks_by_exception_hours.csv").csv("typed: true")
 const parkActivities = FileAttachment("./../data/NPS/parks_by_activities.csv").csv("typed: true")
 const parkTopics = FileAttachment("./../data/NPS/parks_by_topics.csv").csv("typed: true")
+const fullParks = FileAttachment("./../data/NPS/parks_response.json").json()
 ```
 ```js
 parkHours
@@ -40,6 +38,7 @@ filteredTopics
 const activityParks = getUniquePropListBy(filteredActivities, "name")
 const topicParks = getUniquePropListBy(filteredTopics, "name")
 const hoursParks = getUniquePropListBy(filteredHours, "name")
+const annualVisits = FileAttachment("./../data/NPS/annual_visits_2008_2024.csv").csv("typed: true")
 
 ```
 ```js
@@ -92,4 +91,20 @@ const hoursParkAgg = groupedItemObject(filteredHours, hoursParks, "name", "excep
 
 ```js
 hoursParkAgg
+```
+
+
+
+
+
+```js
+const parkArray = []
+for (const each of fullParks.data) {
+  if (each.designation == "National Park") {
+    parkArray.push(each)
+  }
+}
+```
+```js
+
 ```
