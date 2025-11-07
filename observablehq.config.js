@@ -17,7 +17,8 @@ export default {
     {
       name: "Testing Data",
       pages: [
-        {name: "Test Data", path: "components/testing-data-output"},
+        {name: "Test Data", path: "./processing-files/testing-data-output"},
+        {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
       ]
     }
   ],
