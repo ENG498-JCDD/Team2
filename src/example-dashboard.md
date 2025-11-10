@@ -1,18 +1,20 @@
 ---
 theme: dashboard
-title: Example dashboard
+title: National Parks and Economic Struggle
 toc: false
 ---
 
-# Rocket launches 🚀
+# National Park Visitation and Economic Turmoil
+
+Is there a link between national park visitation and economic difficulty? We believe there could be, because national parks could provide a low cost, engaging and memorable activity. Here, we present a case for the relationship between national park visitation, state GDP and state unemployment rates. 
 
 <!-- Load and transform the data -->
 
 ```js
 const launches = FileAttachment("data/launches.csv").csv({typed: true});
+// change this to our data files/files
 ```
 
-<!-- A shared color scale for consistency, sorted by the number of launches -->
 
 ```js
 const color = Plot.scale({
@@ -25,6 +27,7 @@ const color = Plot.scale({
 ```
 
 <!-- Cards with big numbers -->
+<!-- change these to reflect total numbers of park visitation, average cost for a trip for an individual, then maybe average cost for an average sized family? could be an opportunity for beginning story with the costs (prove its a fund cheap activity, also assert popularity)-->
 
 <div class="grid grid-cols-4">
   <div class="card">
@@ -46,6 +49,7 @@ const color = Plot.scale({
 </div>
 
 <!-- Plot of launch history -->
+<!-- maybe plot of visitation of parks per state over the years? or maybe average visitation of all parks over the years. Could also do: average park visitation compared to average gdp compared to average unemployment since 2008 (year is x, other things over y) -->
 
 ```js
 function launchTimeline(data, {width} = {}) {
@@ -96,4 +100,4 @@ function vehicleChart(data, {width}) {
   </div>
 </div>
 
-Data: Jonathan C. McDowell, [General Catalog of Artificial Space Objects](https://planet4589.org/space/gcat)
+<!-- Data: Jonathan C. McDowell, [General Catalog of Artificial Space Objects](https://planet4589.org/space/gcat) -->
