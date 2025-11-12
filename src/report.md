@@ -2,19 +2,17 @@
 title: National Park Visitation and Economic Turmoil
 ---
 
-# A brief history of National Parks
+# National Park Visitation and Economic Turmoil - and Overview
 
-This report is a brief overview of the history and current state of rocket launches and space exploration.
+The following report outlines the history, function, and recent attacks from captiol hill on national parks, as well as an exploration on how they provide entertainment and value to Americans, perhaps especially during times of economic difficulty. We hypothesize that visits to national parks increase when there is economic instability in the country, as they provide inexpensive forms of entertainment and enrichment to visitors. During a period of increasing economic and political uncertainty, it is important to highlight the values that publicly funded provide to society.
 
-## Background
+## Background and History of the National Parks Service and System
 
-The history of rocket launches dates back to ancient China, where gunpowder-filled tubes were used as primitive forms of propulsion.
+In 1872, Congress established the first national park, Yellowstone National Park, for the "benefit and enjoyment of the people". This sparked a movement worldwide to create national parks and preserves. Under the Department of the Interior in the years following Yellowstone's creation, more parks and monuments were created, providing employment opportunities to Americans. In 1916, President Woodrow Wilson signed the "The National Park Service Organic Act", creating the National Park Service within the Department of the Interior to protect and manage current and future national parks and monuments. Now, the National Park System runs over 400 areas over 84 million acres across the United States and its territories.
 
-Fast-forward to the 20th century during the Cold War era, the United States and the Soviet Union embarked on a space race, a competition to innovate and explore beyond Earth.
+## Recent Challenges Facing the National Park Service
 
-This led to the launch of the first artificial satellite, Sputnik 1, and the crewed moon landing by Apollo 11. As technology advanced, rocket launches became synonymous with space exploration and satellite deployment.
 
-## The Space Shuttle era
 
 ```js
 import {timeline} from "./components/timeline.js";
