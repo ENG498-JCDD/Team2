@@ -1,6 +1,6 @@
 ---
 theme: dashboard
-title: National Parks and Economic Struggle
+title: National Park Visitation and Economic Turmoil
 toc: false
 ---
 
