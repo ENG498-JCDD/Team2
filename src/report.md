@@ -1,8 +1,8 @@
 ---
-title: Example report
+title: National Park Visitation and Economic Turmoil
 ---
 
-# A brief history of space exploration
+# A brief history of National Parks
 
 This report is a brief overview of the history and current state of rocket launches and space exploration.
 
