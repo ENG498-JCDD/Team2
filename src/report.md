@@ -12,7 +12,12 @@ In 1872, Congress established the first national park, Yellowstone National Park
 
 ## Recent Challenges Facing the National Park Service
 
+In the last several months specifically, there have been many challenges that National Parks have had to deal with. These stem from the change in Executive Administration, after Former President Donald Trump was re-elected for a second term in 2024. This change has seen a drastic cut in National Park funding, a forced re-wrting of their history on federally-run websites to align with the priorities of the Trump Administration, and a government shut down that ran for 43 days (the longest in US history) which saw national park and Dept. of the Interior workers go over a month without pay. 
 
+These challeneges make it to where parks must make the decision to stay open while understaffed, a potentially dangerous decision for visitors as well as natural and cultural sites, or remain closed and lose out on visitation.
+If parks decide to close, then that is a major economic loss to their communities, especially those that depend on tourism as a driver of economic activity and income.
+
+Other than these more recent challenges, national parks are chronically understafed and underfunded during the best conditions. They also face risks associated with climate change, energy development, and America's aging infrastructure.
 
 ```js
 import {timeline} from "./components/timeline.js";
