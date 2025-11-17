@@ -157,7 +157,32 @@ export const getUniquePropListBy = (arr, key) => {
 const uniqueObjs = [...new Map(arr.map(item => [item[key], item])).values()]
 const uniqList = []
 for (const o of uniqueObjs) {
-uniqList.push(o[key])
+  uniqList.push(o[key])
 }
 return uniqList
+}
+
+
+
+
+/** filterData
+ * 
+ * @params
+ * 1. dataset: the name of an attatched array of objects that you want to filter
+ * 2. attribute: the key in the objects you want to access
+ * 3. value: the value you want to filter for
+ * @returns 
+ * newDataSet: a new array of objects that has been filtered based on your specifications
+ */
+
+
+export const filterData = (dataset, attribute, value) => {
+  const newDataSet = []
+
+  for (const each of dataset) {
+    if (each[attribute] == value) {
+      newDataSet.push(each)
+    }
+  } 
+  return newDataSet
 }
