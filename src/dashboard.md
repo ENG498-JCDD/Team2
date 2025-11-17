@@ -48,7 +48,6 @@ averageCost
 ``` -->
 
 ```js
-// FCP measured in milliseconds
 const colOfInterest = "cost"
 
 // 1. Use `.rollup()`
@@ -67,7 +66,7 @@ const feeRollup = d3.rollup(
       max: d3.max(leaf, l => l[colOfInterest]),
     }
   },
-  // Will group at per website level
+  // Will group at per type level
   d => d.feeType,
 )
 ```
@@ -122,6 +121,183 @@ const color = Plot.scale({
   </div>
 </div>
 
+<!-- adding in another plot to show spread -->
+
+<!-- processing which have multi day and which have single day entry -->
+```js
+const multiDay = []
+const singleDay = []
+for (const fee of parkFees) {
+  if (fee.feeType.includes("Reservation") == false) {
+    if (fee.feeType.includes("Group") == false){
+      if (fee.description.includes("seven") || fee.description.includes("7") && fee.description.includes("7 am") == false || fee.description.includes("days")) {
+        multiDay.push({name:fee.name, type: fee.feeType, cost: fee.cost})
+      }
+      else {
+        singleDay.push({name:fee.name, type: fee.feeType, cost: fee.cost})
+      }
+    }
+  }
+} 
+```
+### Multi-Day Entry
+The following parks charge an entrance fee that allows entry to the park for up to seven days.
+
+***Note:** Group rates not included in this list.*
+```js
+Inputs.table(multiDay,{
+    columns: [
+      "name",
+      "type",
+      "cost",
+    ],
+    header: {
+      name: "Park",
+      type: "Entrance Type",
+      cost: "Cost (USD)",
+    },
+    width: {
+      name: "40%",
+      type: "40%",
+      cost: "20%",
+    },
+  }
+)
+```
+#### Average Cost for Multi-Day Entry
+```js
+const colOfInterest = "cost"
+const multiRollup = d3.rollup(
+  multiDay,
+  
+  leaf => {
+    return {
+      mean: d3.mean(leaf, l => l[colOfInterest]),
+      median: d3.median(leaf, l => l[colOfInterest]),
+      mode: d3.mode(leaf, l => l[colOfInterest]),
+      min: d3.min(leaf, l => l[colOfInterest]),
+      max: d3.max(leaf, l => l[colOfInterest]),
+    }
+  },
+  d => d.type,
+)
+```
+```js
+const multiTendencies = Array.from(
+  multiRollup,
+  ([type, ctResults]) => {
+    return {
+      type: type,
+      mean: ctResults.mean,
+      median: ctResults.median,
+      mode: ctResults.mode,
+      min: ctResults.min,
+      max: ctResults.max,
+  }
+  }
+)
+```
+```js
+Inputs.table(multiTendencies,
+  {
+    columns: [
+      "type",
+      "mean",
+    ],
+      width: {
+      type: "50%",
+      mean: "50%",
+    },
+    align: {
+      type: "left",
+      mean: "left",
+    },
+    header: {
+      type: "Entrance Type",
+      mean: "Average Cost to Enter (USD)",
+    },
+  }
+)
+```
+
+
+### Single Day Entry
+The following parks charge an entrance fee that allows entry to the park for only one day.
+```js
+Inputs.table(singleDay,{
+  columns: [
+      "name",
+      "type",
+      "cost",
+    ],
+    header: {
+      name: "Park",
+      type: "Entrance Type",
+      cost: "Cost (USD)",
+    },
+    width: {
+      name: "40%",
+      type: "40%",
+      cost: "20%",
+    },
+  }
+)
+```
+
+```js
+const colOfInterest = "cost"
+const singleRollup = d3.rollup(
+  singleDay,
+  leaf => {
+    return {
+      mean: d3.mean(leaf, l => l[colOfInterest]),
+      median: d3.median(leaf, l => l[colOfInterest]),
+      mode: d3.mode(leaf, l => l[colOfInterest]),
+      min: d3.min(leaf, l => l[colOfInterest]),
+      max: d3.max(leaf, l => l[colOfInterest]),
+    }
+  },
+  d => d.type,
+)
+```
+```js
+const singleTendencies = Array.from(
+  singleRollup,
+  ([type, ctResults]) => {
+    return {
+      type: type,
+      mean: ctResults.mean,
+      median: ctResults.median,
+      mode: ctResults.mode,
+      min: ctResults.min,
+      max: ctResults.max,
+  }
+  }
+)
+```
+#### Average Cost for Single Day Entry Passes
+```js
+Inputs.table(singleTendencies,
+  {
+    columns: [
+      "type",
+      "mean",
+    ],
+      width: {
+      type: "50%",
+      mean: "50%",
+    },
+    align: {
+      type: "left",
+      mean: "left",
+    },
+    header: {
+      type: "Entrance Type",
+      mean: "Average Cost to Enter (USD)",
+    },
+  }
+)
+```
 <!-- Plot of launch history -->
 <!-- maybe plot of visitation of parks per state over the years? or maybe average visitation of all parks over the years. Could also do: average park visitation compared to average gdp compared to average unemployment since 2008 (year is x, other things over y) -->
 
