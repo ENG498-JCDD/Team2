@@ -27,7 +27,71 @@ Is there a link between national park visitation and economic difficulty? We bel
 const launches = FileAttachment("data/launches.csv").csv({typed: true});
 // change this to our data files/files
 ```
+```js
+parkFees
+```
+```js
+const feeTypes = getUniquePropListBy(parkFees, "feeType")
+```
+<!-- ```js
+let costCounter = 0
+let feeCounter = 0
+for (const fee of parkFees) {
+  console.log(fee.cost)
+  costCounter += fee.cost 
+  feeCounter += 1
+}
+let averageCost = costCounter / feeCounter
+```
+```js
+averageCost
+``` -->
 
+```js
+// FCP measured in milliseconds
+const colOfInterest = "cost"
+
+// 1. Use `.rollup()`
+const feeRollup = d3.rollup(
+  parkFees,
+  // Based on the leaf node, create object of CT info
+  //this function is looking at the leaf and perfoming other functions rather than counting like we have before
+  
+  //so in this case it will find everything with a particular hostname, and perform these evaluations based on that leaf
+  leaf => {
+    return {
+      mean: d3.mean(leaf, l => l[colOfInterest]),
+      median: d3.median(leaf, l => l[colOfInterest]),
+      mode: d3.mode(leaf, l => l[colOfInterest]),
+      min: d3.min(leaf, l => l[colOfInterest]),
+      max: d3.max(leaf, l => l[colOfInterest]),
+    }
+  },
+  // Will group at per website level
+  d => d.feeType,
+)
+```
+```js
+feeRollup
+```
+```js
+const feeCentralTendencies = Array.from(
+  feeRollup,
+  ([type, ctResults]) => {
+    return {
+      feeType: type,
+      mean: ctResults.mean,
+      median: ctResults.median,
+      mode: ctResults.mode,
+      min: ctResults.min,
+      max: ctResults.max,
+  }
+  }
+)
+```
+```js
+feeCentralTendencies
+```
 
 ```js
 const color = Plot.scale({
@@ -42,22 +106,19 @@ const color = Plot.scale({
 <!-- Cards with big numbers -->
 <!-- change these to reflect total numbers of park visitation, average cost for a trip for an individual, then maybe average cost for an average sized family? could be an opportunity for beginning story with the costs (prove its a fund cheap activity, also assert popularity)-->
 
-<div class="grid grid-cols-4">
+## Average Cost of Entry
+<div class="grid grid-cols-3">
   <div class="card">
-    <h2>United States 🇺🇸</h2>
-    <span class="big">${launches.filter((d) => d.stateId === "US").length.toLocaleString("en-US")}</span>
+    <h2>Individual Entry -- Per Person</h2>
+    <span class="big">${"$15.76"}</span>
+  </div>
+ <div class="card">
+    <h2>Individual Entry -- Per Car</h2>
+    <span class="big">${"$29.47"}</span>
   </div>
   <div class="card">
-    <h2>Russia 🇷🇺 <span class="muted">/ Soviet Union</span></h2>
-    <span class="big">${launches.filter((d) => d.stateId === "SU" || d.stateId === "RU").length.toLocaleString("en-US")}</span>
-  </div>
-  <div class="card">
-    <h2>China 🇨🇳</h2>
-    <span class="big">${launches.filter((d) => d.stateId === "CN").length.toLocaleString("en-US")}</span>
-  </div>
-  <div class="card">
-    <h2>Other</h2>
-    <span class="big">${launches.filter((d) => d.stateId !== "US" && d.stateId !== "SU" && d.stateId !== "RU" && d.stateId !== "CN").length.toLocaleString("en-US")}</span>
+    <h2>Individual Entry -- Motorcycle</h2>
+    <span class="big">${"$24.61"}</span>
   </div>
 </div>
 
