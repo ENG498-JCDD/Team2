@@ -4,6 +4,19 @@ title: National Park Visitation and Economic Turmoil
 toc: false
 ---
 
+```js
+//data
+import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
+```
+
+```js
+//data
+const gdpData = FileAttachment("./../data/FRED/annual_gdp_by_state.csv").csv({typed: true})
+const unEmpData = FileAttachment("./../data/FRED/average_annual_unemployment_rate.csv").csv({typed: true})
+const annualVisits = FileAttachment("./../data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
+const fullParks = FileAttachment("./../data/NPS/full_parks_dataset.csv").csv({typed: true})
+const parkFees = FileAttachment("./../data/NPS/park_fees.csv").csv({typed: true})
+```
 # National Park Visitation and Economic Turmoil
 
 Is there a link between national park visitation and economic difficulty? We believe there could be, because national parks could provide a low cost, engaging and memorable activity. Here, we present a case for the relationship between national park visitation, state GDP and state unemployment rates. 
