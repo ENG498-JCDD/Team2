@@ -5,14 +5,15 @@ Since the scope  of our project if focusing only on national parks (the specific
 ```js
 
 import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
+import {us-state-converter} from npm
 
 ```
 
 
 ```js
-const parkHours = FileAttachment("./../data/NPS/parks_by_exception_hours.csv").csv("typed: true")
-const parkActivities = FileAttachment("./../data/NPS/parks_by_activities.csv").csv("typed: true")
-const parkTopics = FileAttachment("./../data/NPS/parks_by_topics.csv").csv("typed: true")
+const parkHours = FileAttachment("./../data/NPS/parks_by_exception_hours.csv").csv({typed: true})
+const parkActivities = FileAttachment("./../data/NPS/parks_by_activities.csv").csv({typed: true})
+const parkTopics = FileAttachment("./../data/NPS/parks_by_topics.csv").csv({typed: true})
 const fullParks = FileAttachment("./../data/NPS/parks_response.json").json()
 ```
 ```js
@@ -38,7 +39,7 @@ filteredTopics
 const activityParks = getUniquePropListBy(filteredActivities, "name")
 const topicParks = getUniquePropListBy(filteredTopics, "name")
 const hoursParks = getUniquePropListBy(filteredHours, "name")
-const annualVisits = FileAttachment("./../data/NPS/annual_visits_2008_2024.csv").csv("typed: true")
+const annualVisits = FileAttachment("./../data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
 
 ```
 ```js
@@ -104,7 +105,4 @@ for (const each of fullParks.data) {
     parkArray.push(each)
   }
 }
-```
-```js
-
 ```
