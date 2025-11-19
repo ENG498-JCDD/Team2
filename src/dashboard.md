@@ -5,8 +5,13 @@ toc: false
 ---
 
 ```js
-//data
+//imports
 import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
+```
+
+```js
+//formatters
+const numberNoCommasFormatter = d3.format("")
 ```
 
 ```js
@@ -27,26 +32,10 @@ Is there a link between national park visitation and economic difficulty? We bel
 const launches = FileAttachment("data/launches.csv").csv({typed: true});
 // change this to our data files/files
 ```
-```js
-parkFees
-```
+
 ```js
 const feeTypes = getUniquePropListBy(parkFees, "feeType")
 ```
-<!-- ```js
-let costCounter = 0
-let feeCounter = 0
-for (const fee of parkFees) {
-  console.log(fee.cost)
-  costCounter += fee.cost 
-  feeCounter += 1
-}
-let averageCost = costCounter / feeCounter
-```
-```js
-averageCost
-``` -->
-
 ```js
 const colOfInterest = "cost"
 
@@ -70,9 +59,7 @@ const feeRollup = d3.rollup(
   d => d.feeType,
 )
 ```
-```js
-feeRollup
-```
+
 ```js
 const feeCentralTendencies = Array.from(
   feeRollup,
@@ -87,9 +74,6 @@ const feeCentralTendencies = Array.from(
   }
   }
 )
-```
-```js
-feeCentralTendencies
 ```
 
 ```js
@@ -298,56 +282,65 @@ Inputs.table(singleTendencies,
   }
 )
 ```
-<!-- Plot of launch history -->
+
 <!-- maybe plot of visitation of parks per state over the years? or maybe average visitation of all parks over the years. Could also do: average park visitation compared to average gdp compared to average unemployment since 2008 (year is x, other things over y) -->
 
+<!-- I think here we should have the drop down to pick which park we are looking at -->
+
+
+
+## Visitation Over the Years
+
+<!-- PLOT INFO STARTS HERE -->
 ```js
-function launchTimeline(data, {width} = {}) {
-  return Plot.plot({
-    title: "Launches over the years",
-    width,
-    height: 300,
-    y: {grid: true, label: "Launches"},
-    color: {...color, legend: true},
-    marks: [
-      Plot.rectY(data, Plot.binX({y: "count"}, {x: "date", fill: "state", interval: "year", tip: true})),
-      Plot.ruleY([0])
-    ]
-  });
-}
+let parkSelection = view(
+  Inputs.select(
+    // Get unique list of years as Integer/Number
+    getUniquePropListBy(fullParks, "name"),
+    {
+      label: html`<em>Select which park</em>`,
+      value: "",
+    }
+  )
+)
 ```
-
-<div class="grid grid-cols-1">
-  <div class="card">
-    ${resize((width) => launchTimeline(launches, {width}))}
-  </div>
-</div>
-
-<!-- Plot of launch vehicles -->
-
 ```js
-function vehicleChart(data, {width}) {
-  return Plot.plot({
-    title: "Popular launch vehicles",
-    width,
-    height: 300,
-    marginTop: 0,
-    marginLeft: 50,
-    x: {grid: true, label: "Launches"},
-    y: {label: null},
-    color: {...color, legend: true},
-    marks: [
-      Plot.rectX(data, Plot.groupY({x: "count"}, {y: "family", fill: "state", tip: true, sort: {y: "-x"}})),
-      Plot.ruleX([0])
-    ]
-  });
-}
+Plot.plot({
+    width: 1000,
+    marginLeft: 55,
+  x:{
+    tickFormat: (d) => {
+      if( d != "Average") {
+      return numberNoCommasFormatter(d)
+      }
+      else {
+        return d
+      }
+    },
+    y: {
+      grid: true,
+      label: "Visits per Year",
+      // domain: yDomain,
+    },
+  },
+  color: {
+    type: "linear",
+    scheme: "brbg",
+  },
+  marks: [
+    Plot.barY(annualVisits,
+      {
+        x: "Year",
+        y: parkSelection,
+        fill: "Year",
+        tip :{
+          format: {
+            x: (d) => numberNoCommasFormatter(d),
+          }
+        }
+      }
+    ),
+  ]
+})
 ```
-
-<div class="grid grid-cols-1">
-  <div class="card">
-    ${resize((width) => vehicleChart(launches, {width}))}
-  </div>
-</div>
-
-<!-- Data: Jonathan C. McDowell, [General Catalog of Artificial Space Objects](https://planet4589.org/space/gcat) -->
+<!-- PLOT INFO ENDS HERE -->

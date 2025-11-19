@@ -14,7 +14,7 @@ const parkFees = FileAttachment("./data/NPS/park_fees.csv").csv({typed: true})
 ```
 
 ```js
-parkFees
+fullParks
 ```
 
 ```js
@@ -230,6 +230,52 @@ Plot.plot({
   
   marks: [
     Plot.boxX(parkFeesMinusOutlier, {y: "feeType", x: "cost", interval: 10, tip: true})
+  ]
+})
+```
+
+```js
+let parkSelection = view(
+  Inputs.select(
+    getUniquePropListBy(fullParks, "name"),
+    {
+      label: html`<em>Select which park</em>`,
+      value: "",
+    }
+  )
+)
+```
+```js
+let stateSelection = view(
+  Inputs.select(
+    getUniquePropListBy(fullParks, "state"),
+    {
+      label: html`<em>Select which state</em>`,
+      value: "",
+    }
+  )
+)
+```
+```js
+Plot.plot({
+  marks: [
+    Plot.barY(annualVisits,
+      {
+        x: "Year",
+        y: parkSelection,
+        fill: "Year"
+      }),
+  ]
+})
+```
+
+```js
+Plot.plot({
+  marks:[
+      Plot.lineX(unEmpData, {
+        x: "Year",
+        y: stateSelection,
+      }),
   ]
 })
 ```
