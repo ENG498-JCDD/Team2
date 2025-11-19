@@ -1,7 +1,7 @@
 # Refactor the structure
 
 ```js
-const annualVisits = FileAttachment("./data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
+const annualVisits = FileAttachment("./../data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
 ```
 
 <!-- Get list of parks in dataset -->
@@ -34,13 +34,40 @@ for (let yearRow of annualVisits) {
 
 <!-- Filter out the "Year" values -->
 ```js
-const refactoredAnnualVisitDataFiltered = refactoredAnnualVisitData.filter((parkRow) => parkRow.park !== "Year")
+const refactoredAnnualVisitDataFiltered = refactoredAnnualVisitData.filter((parkRow) => (parkRow.park !== "Year") && (parkRow.year !== "Average"))
 ```
 
 Verify that the data are refactored at `refactoredAnnualVisitData` variable.
 
 ```js
 refactoredAnnualVisitDataFiltered
+```
+
+## Test d3.mean()
+
+### Overall Average
+
+```js
+d3.mean(refactoredAnnualVisitDataFiltered, (d) => d.visits)
+```
+
+### By Park Calculations
+
+```js
+d3.rollup(
+  refactoredAnnualVisitDataFiltered,
+  (leaf) => {
+    // Return an object with CT data
+    return {
+      mean: d3.mean(leaf, l => l.visits),
+      median: d3.median(leaf, l => l.visits),
+      mode: d3.mode(leaf, l => l.visits),
+      sum: d3.sum(leaf, l => l.visits),
+      // and so on ...
+    }
+  },
+  (d) => d.park,
+)
 ```
 
 <!-- Define Download as CSV Function -->

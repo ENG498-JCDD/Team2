@@ -17,6 +17,7 @@ export default {
     {
       name: "Testing Data",
       pages: [
+        {name: "Refactor Data", path: "./processing-files/refactor"},
         {name: "Test Data", path: "./processing-files/testing-data-output"},
         {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
         {name: "Test Plots", path: "./processing-files/test-plots"},
