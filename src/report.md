@@ -25,15 +25,18 @@ National parks are a popular attraction among people both in and outside of the 
 
 For our dashboard, we have found data beginning in 2008, the beginning of the 2008 Financial Crisis (AKA "The Great Recession") which was caused by a crashing housing market in the United States that had world-wide implications. We thought beginning out data story here would allow users to get a thorough picture of the last nearly two decades of American economic highs and lows to compare to national park visitation and entry costs.
 
-```js
+
+
+<!-- Things from example (disregard) -->
+<!-- ```js
 import {timeline} from "./components/timeline.js";
-```
+``` -->
 
-```js
+<!-- ```js
 const events = FileAttachment("./data/events.json").json();
-```
+``` -->
 
-```js
+<!-- ```js
 timeline(events, {height: 300})
-```
+``` -->
 
