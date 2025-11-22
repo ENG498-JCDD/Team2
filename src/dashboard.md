@@ -423,6 +423,10 @@ for (const year of unEmpUpdated) {
 
 ```js
 let unEmpPlot = Plot.plot({
+  color: {
+      type: "linear",
+      scheme: "brbg",
+      },
   x:{
     tickFormat: (d) => numberNoCommasFormatter(d),
     label: "Year"
@@ -435,18 +439,31 @@ let unEmpPlot = Plot.plot({
       Plot.lineX(unEmpUpdated, {
         x: "Year",
         y: stateSelect,
-        tip :{
+        stroke: "grey",
+        strokeWidth: 3,         
+      }),
+      Plot.dot(unEmpUpdated, {
+      x: "Year",
+      y: stateSelect,
+      fill: "Year",
+      r:5,
+      strokeWidth: 3, 
+      tip :{
           format: {
             x: (d) => numberNoCommasFormatter(d),
-            y: ".1%"
+            y:".1%"
           }
-        },        
-      }),
+        }
+      }), 
   ]
 })
 ```
 ```js
 let gdpPlot = Plot.plot({
+  color: {
+      type: "linear",
+      scheme: "brbg",
+      },
   x:{
     tickFormat: (d) => numberNoCommasFormatter(d),
     label: "Year",
@@ -458,13 +475,20 @@ let gdpPlot = Plot.plot({
     Plot.lineX(gdpData, {
       x: "Year",
       y: stateSelect,
+      stroke: "grey",
+      strokeWidth: 3, 
+    }),
+    Plot.dot(gdpData, {
+      x: "Year",
+      y: stateSelect,
+      fill: "Year",
+      r: 5,
       tip :{
           format: {
             x: (d) => numberNoCommasFormatter(d),
           }
         }
-    })
-  ]
+      }),  ]
 })
 ```
 <div class = "grid grid-cols-2">
