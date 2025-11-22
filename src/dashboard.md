@@ -21,7 +21,7 @@ const unEmpData = FileAttachment("./data/FRED/average_annual_unemployment_rate.c
 const annualVisits = FileAttachment("./data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
 const fullParks = FileAttachment("./data/NPS/full_parks_dataset.csv").csv({typed: true})
 const parkFees = FileAttachment("./data/NPS/park_fees.csv").csv({typed: true})
-const avgVisits = FileAttachment("./data/NPS/annual_visits_2008_2024_original.csv").csv({typed: true})
+const visitsRefac = FileAttachment("./data/NPS/refactored_annual_visits.csv").csv({typed: true})
 
 ```
 # National Park Visitation and Economic Turmoil
@@ -294,6 +294,7 @@ Inputs.table(singleTendencies,
 ## Visitation Over the Years
 
 <!-- PLOT INFO STARTS HERE -->
+<!-- creating park selector -->
 ```js
 let parkSelection = view(
   Inputs.select(
@@ -306,6 +307,57 @@ let parkSelection = view(
   )
 )
 ```
+<!-- selecting state based on park selection -->
+```js
+let stateSelect= ""
+
+for (const park of fullParks) {
+  if (parkSelection == park.name) {
+    stateSelect = park.state
+  }
+}
+```
+<!-- Finding Average Visits for Each Park -->
+
+```js
+const visitsRollup = d3.rollup(
+  visitsRefac,
+  (leaf) => {
+    // Return an object with CT data
+    return {
+      mean: d3.mean(leaf, l => l.visits),
+      median: d3.median(leaf, l => l.visits),
+      mode: d3.mode(leaf, l => l.visits),
+      sum: d3.sum(leaf, l => l.visits),
+      min: d3.min(leaf, l => l.visits),
+      max: d3.max(leaf, l => l.visits),
+      // and so on ...
+    }
+  },
+  (d) => d.park,
+)
+```
+
+
+```js
+const visitTendencies = Array.from(
+  visitsRollup,
+  ([park, ctResults]) => {
+    return {
+      park: park,
+      Average: ctResults.mean,
+      median: ctResults.median,
+      mode: ctResults.mode,
+      min: ctResults.min,
+      max: ctResults.max,
+      sum: ctResults.sum,
+  }
+  }
+)
+```
+<!-- Plotting Visitation -->
+
+
 ```js
 Plot.plot({
     width: 1000,
@@ -342,7 +394,88 @@ Plot.plot({
         }
       }
     ),
+    Plot.ruleY(visitTendencies.filter((d) => d.park == parkSelection), {
+      y: "Average", 
+      stroke: "white",
+      strokeWidth: 3, 
+      tip: true,
+    }),
   ]
 })
 ```
+<!-- PLOT INFO ENDS HERE -->
+
+## Tracing the Economy
+<!-- PLOT INFO STARTS HERE -->
+<!-- reformatting unemp data -->
+```js
+const stateList = getUniquePropListBy(fullParks, "state")
+let unEmpUpdated = unEmpData
+for (const year of unEmpUpdated) {
+  for (const state of stateList) {
+    if (year[state] != null) {
+      year[state] = year[state]/100
+    }
+  }
+}
+```
+<!-- Ploting Ecomonic Data -->
+
+```js
+let unEmpPlot = Plot.plot({
+  x:{
+    tickFormat: (d) => numberNoCommasFormatter(d),
+    label: "Year"
+  },
+  y: {
+    tickFormat: ".1%",
+    label: "Average Unemployment Rate"
+  },
+  marks:[
+      Plot.lineX(unEmpUpdated, {
+        x: "Year",
+        y: stateSelect,
+        tip :{
+          format: {
+            x: (d) => numberNoCommasFormatter(d),
+            y: ".1%"
+          }
+        },        
+      }),
+  ]
+})
+```
+```js
+let gdpPlot = Plot.plot({
+  x:{
+    tickFormat: (d) => numberNoCommasFormatter(d),
+    label: "Year",
+    },
+  y: {
+    label: "GDP in Millions of USD",
+  },
+  marks:[
+    Plot.lineX(gdpData, {
+      x: "Year",
+      y: stateSelect,
+      tip :{
+          format: {
+            x: (d) => numberNoCommasFormatter(d),
+          }
+        }
+    })
+  ]
+})
+```
+<div class = "grid grid-cols-2">
+   <div class="card">
+    <h2>${stateSelect} Unemployment Rate (2008-2024)</h2>
+    ${unEmpPlot}
+  </div>
+   <div class="card">
+    <h2>${stateSelect} GDP (2008-2024)</h2>
+    ${gdpPlot}
+  </div>
+</div>
+
 <!-- PLOT INFO ENDS HERE -->
