@@ -5,7 +5,7 @@ Since the scope  of our project if focusing only on national parks (the specific
 ```js
 
 import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
-import {us-state-converter} from npm
+import "us-state-converter" from npm
 
 ```
 
