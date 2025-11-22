@@ -359,9 +359,9 @@ const visitTendencies = Array.from(
 
 
 ```js
-Plot.plot({
+const visitPlot = Plot.plot({
     width: 1000,
-    marginLeft: 55,
+    marginLeft: 100,
   x:{
     tickFormat: (d) => {
       if( d != "Average") {
@@ -371,12 +371,12 @@ Plot.plot({
         return d
       }
     },
+    },
     y: {
       grid: true,
-      label: "Visits per Year",
+      // label: "Visitors per Year",
       // domain: yDomain,
     },
-  },
   color: {
     type: "linear",
     scheme: "brbg",
@@ -403,6 +403,13 @@ Plot.plot({
   ]
 })
 ```
+
+<div class = "grid grid-cols-1">
+   <div class="card">
+    <h2>${parkSelection} Total Annual Visitors (2008-2024)</h2>
+    ${visitPlot}
+  </div>
+</div>
 <!-- PLOT INFO ENDS HERE -->
 
 ## Tracing the Economy
