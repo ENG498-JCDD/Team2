@@ -21,6 +21,8 @@ const unEmpData = FileAttachment("./data/FRED/average_annual_unemployment_rate.c
 const annualVisits = FileAttachment("./data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
 const fullParks = FileAttachment("./data/NPS/full_parks_dataset.csv").csv({typed: true})
 const parkFees = FileAttachment("./data/NPS/park_fees.csv").csv({typed: true})
+const avgVisits = FileAttachment("./data/NPS/annual_visits_2008_2024_original.csv").csv({typed: true})
+
 ```
 # National Park Visitation and Economic Turmoil
 

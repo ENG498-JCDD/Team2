@@ -11,6 +11,7 @@ const unEmpData = FileAttachment("./data/FRED/average_annual_unemployment_rate.c
 const annualVisits = FileAttachment("./data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
 const fullParks = FileAttachment("./data/NPS/full_parks_dataset.csv").csv({typed: true})
 const parkFees = FileAttachment("./data/NPS/park_fees.csv").csv({typed: true})
+const avgVisits = FileAttachment("./data/NPS/annual_visits_2008_2024_original.csv").csv({typed: true})
 ```
 
 ```js
@@ -258,13 +259,20 @@ let stateSelection = view(
 ```
 ```js
 Plot.plot({
+  color:{
+    type: "linear",
+    scheme: "brbg",
+  },
   marks: [
     Plot.barY(annualVisits,
       {
         x: "Year",
         y: parkSelection,
-        fill: "Year"
+        fill: "Year",
       }),
+      Plot.ruleY(avgVisits, 
+      filter: (d) => {d.parkName == parkSelection},
+      {y:"Average", stroke: "white"})
   ]
 })
 ```
@@ -276,6 +284,26 @@ Plot.plot({
         x: "Year",
         y: stateSelection,
       }),
+  ]
+})
+```
+
+```js
+annualVisits
+```
+
+```js
+avgVisits
+```
+
+```js
+plot.Plot({
+  marks: [
+    Plot.ruleX(avgVisits,
+      {
+        y: "Average"
+      }
+    )
   ]
 })
 ```
