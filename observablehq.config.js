@@ -11,7 +11,8 @@ export default {
       name: "Data Visualization - rename me?",
       pages: [
         {name: "Dashboard", path: "/dashboard"},
-        {name: "Report", path: "/report"}
+        {name: "Report", path: "/report"},
+        {name: "Scratch Work", path: "/scratch-work"}
       ]
     },
     {
