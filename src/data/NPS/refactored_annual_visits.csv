@@ -28,7 +28,7 @@ year,park,visits
 2008,Great Smoky Mountains National Park,9044010
 2008,Guadalupe Mountains National Park,163709
 2008,Haleakala National Park,1185068
-2008,Hawaii Volcanoes National Park,1270538
+2008,Hawaiʻi Volcanoes National Park,1270538
 2008,Hot Springs National Park,1238147
 2008,Indiana Dunes National Park,1833596
 2008,Isle Royale National Park,14038
@@ -91,7 +91,7 @@ year,park,visits
 2009,Great Smoky Mountains National Park,9491437
 2009,Guadalupe Mountains National Park,198882
 2009,Haleakala National Park,1109104
-2009,Hawaii Volcanoes National Park,1233105
+2009,Hawaiʻi Volcanoes National Park,1233105
 2009,Hot Springs National Park,1284707
 2009,Indiana Dunes National Park,1944568
 2009,Isle Royale National Park,14653
@@ -154,7 +154,7 @@ year,park,visits
 2010,Great Smoky Mountains National Park,9463538
 2010,Guadalupe Mountains National Park,192210
 2010,Haleakala National Park,1105606
-2010,Hawaii Volcanoes National Park,1304667
+2010,Hawaiʻi Volcanoes National Park,1304667
 2010,Hot Springs National Park,1311807
 2010,Indiana Dunes National Park,2150345
 2010,Isle Royale National Park,15793
@@ -217,7 +217,7 @@ year,park,visits
 2011,Great Smoky Mountains National Park,9008830
 2011,Guadalupe Mountains National Park,152546
 2011,Haleakala National Park,956989
-2011,Hawaii Volcanoes National Park,1352123
+2011,Hawaiʻi Volcanoes National Park,1352123
 2011,Hot Springs National Park,1396354
 2011,Indiana Dunes National Park,1840513
 2011,Isle Royale National Park,15892
@@ -280,7 +280,7 @@ year,park,visits
 2012,Great Smoky Mountains National Park,9685829
 2012,Guadalupe Mountains National Park,159360
 2012,Haleakala National Park,1094668
-2012,Hawaii Volcanoes National Park,1483928
+2012,Hawaiʻi Volcanoes National Park,1483928
 2012,Hot Springs National Park,1302505
 2012,Indiana Dunes National Park,1889381
 2012,Isle Royale National Park,16663
@@ -343,7 +343,7 @@ year,park,visits
 2013,Great Smoky Mountains National Park,9354695
 2013,Guadalupe Mountains National Park,145670
 2013,Haleakala National Park,785300
-2013,Hawaii Volcanoes National Park,1583209
+2013,Hawaiʻi Volcanoes National Park,1583209
 2013,Hot Springs National Park,1325719
 2013,Indiana Dunes National Park,1681695
 2013,Isle Royale National Park,16274
@@ -406,7 +406,7 @@ year,park,visits
 2014,Great Smoky Mountains National Park,10099276
 2014,Guadalupe Mountains National Park,166868
 2014,Haleakala National Park,1142040
-2014,Hawaii Volcanoes National Park,1693005
+2014,Hawaiʻi Volcanoes National Park,1693005
 2014,Hot Springs National Park,1424484
 2014,Indiana Dunes National Park,1553372
 2014,Isle Royale National Park,14560
@@ -469,7 +469,7 @@ year,park,visits
 2015,Great Smoky Mountains National Park,10712674
 2015,Guadalupe Mountains National Park,169535
 2015,Haleakala National Park,1216772
-2015,Hawaii Volcanoes National Park,1832660
+2015,Hawaiʻi Volcanoes National Park,1832660
 2015,Hot Springs National Park,1418162
 2015,Indiana Dunes National Park,1640195
 2015,Isle Royale National Park,18684
@@ -532,7 +532,7 @@ year,park,visits
 2016,Great Smoky Mountains National Park,11312786
 2016,Guadalupe Mountains National Park,181839
 2016,Haleakala National Park,1263558
-2016,Hawaii Volcanoes National Park,1887580
+2016,Hawaiʻi Volcanoes National Park,1887580
 2016,Hot Springs National Park,1544300
 2016,Indiana Dunes National Park,1698223
 2016,Isle Royale National Park,24966
@@ -595,7 +595,7 @@ year,park,visits
 2017,Great Smoky Mountains National Park,11338893
 2017,Guadalupe Mountains National Park,225257
 2017,Haleakala National Park,1112390
-2017,Hawaii Volcanoes National Park,2016702
+2017,Hawaiʻi Volcanoes National Park,2016702
 2017,Hot Springs National Park,1561616
 2017,Indiana Dunes National Park,2158471
 2017,Isle Royale National Park,28196
@@ -658,7 +658,7 @@ year,park,visits
 2018,Great Smoky Mountains National Park,11421200
 2018,Guadalupe Mountains National Park,172347
 2018,Haleakala National Park,1044084
-2018,Hawaii Volcanoes National Park,1116891
+2018,Hawaiʻi Volcanoes National Park,1116891
 2018,Hot Springs National Park,1506887
 2018,Indiana Dunes National Park,1756079
 2018,Isle Royale National Park,25798
@@ -721,7 +721,7 @@ year,park,visits
 2019,Great Smoky Mountains National Park,12547743
 2019,Guadalupe Mountains National Park,188833
 2019,Haleakala National Park,994394
-2019,Hawaii Volcanoes National Park,1368376
+2019,Hawaiʻi Volcanoes National Park,1368376
 2019,Hot Springs National Park,1467153
 2019,Indiana Dunes National Park,2134285
 2019,Isle Royale National Park,26410
@@ -784,7 +784,7 @@ year,park,visits
 2020,Great Smoky Mountains National Park,12095720
 2020,Guadalupe Mountains National Park,151256
 2020,Haleakala National Park,319147
-2020,Hawaii Volcanoes National Park,589775
+2020,Hawaiʻi Volcanoes National Park,589775
 2020,Hot Springs National Park,1348215
 2020,Indiana Dunes National Park,2293106
 2020,Isle Royale National Park,6493
@@ -847,7 +847,7 @@ year,park,visits
 2021,Great Smoky Mountains National Park,14161548
 2021,Guadalupe Mountains National Park,243291
 2021,Haleakala National Park,853181
-2021,Hawaii Volcanoes National Park,1262747
+2021,Hawaiʻi Volcanoes National Park,1262747
 2021,Hot Springs National Park,2162884
 2021,Indiana Dunes National Park,3177210
 2021,Isle Royale National Park,25844
@@ -910,7 +910,7 @@ year,park,visits
 2022,Great Smoky Mountains National Park,12937633
 2022,Guadalupe Mountains National Park,219987
 2022,Haleakala National Park,1087616
-2022,Hawaii Volcanoes National Park,1580961
+2022,Hawaiʻi Volcanoes National Park,1580961
 2022,Hot Springs National Park,2646133
 2022,Indiana Dunes National Park,2834180
 2022,Isle Royale National Park,25454
@@ -973,7 +973,7 @@ year,park,visits
 2023,Great Smoky Mountains National Park,13297647
 2023,Guadalupe Mountains National Park,227340
 2023,Haleakala National Park,791292
-2023,Hawaii Volcanoes National Park,1620294
+2023,Hawaiʻi Volcanoes National Park,1620294
 2023,Hot Springs National Park,2502967
 2023,Indiana Dunes National Park,2765892
 2023,Isle Royale National Park,28965
@@ -1036,7 +1036,7 @@ year,park,visits
 2024,Great Smoky Mountains National Park,12191834
 2024,Guadalupe Mountains National Park,226134
 2024,Haleakala National Park,732477
-2024,Hawaii Volcanoes National Park,1433593
+2024,Hawaiʻi Volcanoes National Park,1433593
 2024,Hot Springs National Park,2461812
 2024,Indiana Dunes National Park,2705209
 2024,Isle Royale National Park,28806
