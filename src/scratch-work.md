@@ -388,7 +388,6 @@ Plot.plot({
 unEmpData
 ```
 ```js
-
 const stateList = getUniquePropListBy(fullParks, "state")
 let unEmpUpdated = unEmpData
 for (const year of unEmpUpdated) {
@@ -401,4 +400,32 @@ for (const year of unEmpUpdated) {
 ```
 ```js
 unEmpUpdated
+```
+```js
+const us = await fetch(import.meta.resolve("npm:us-atlas/counties-10m.json")).then((r) => r.json())
+const states = topojson.feature(us, us.objects.states)
+```
+
+```js
+Plot.plot({
+  color: {
+    scheme: "ylgnbu",
+  },
+  projection: "albers-usa",
+  marks: [
+    Plot.geo(states, {fill: "white",stroke: "var(--theme-foreground)", opacity: 0.25, }
+    ),
+    Plot.dot(fullParks, 
+    {
+      x: "longitude",
+      y: "latitude",
+      title: (d) => d.name,
+      tip: true,
+      // fill: "name",
+      stroke: "name",
+      r: 4,
+      strokeWidth: 2,
+    })
+  ]
+})
 ```
