@@ -22,6 +22,83 @@ Recent executive orders and defunding of departments and agencies in the federal
   1,2,3,"Hello world!"
   ```
 
+**`src/data/FRED/annual_gdp_by_state.csv`**
+- **Topic**: Annual GDP by State
+- **Overview**: The annual GDP for each state from 2008-2025. For economic piece of hypothesis.
+- **Source**: [Enter link to source]()
+- **Sample Row**: *the row follows the following pattern: "Year,Alaska,Arizona,Arkansas,California,Colorado,Florida,Hawaii,Idaho,Indiana,Kentucky,Maine,Michigan,Minnesota,Missouri,Montana,Nevada,New Mexico,North Carolina,North Dakota,Ohio,Oregon,South Carolina,South Dakota,Tennessee,Texas,Utah,Virginia,"Washington, D.C",Washington,West Virginia,Wyoming,U.S. Territory,National"*
+  ```csv
+  2008,55246.7,261005.8,100206.7,1946242,257606.1,767357.8,65545.5,56203.6,277774.5,160700.2,51001.9,391633.6,268771.5,256431.1,37028,130570.9,84339.7,420707.2,32027.7,500916.4,164122.9,164471.2,36939.3,255546.7,1253142,116949.2,402157.8,395698.808,352460.7,62978.7,42694.6,null,14769.862
+  ```
+
+  `**`src/data/FRED/average_annual_unemployment_rate.csv`**
+- **Topic**: Average Annual Unemployment Rate by State.
+- **Overview**: The annual average unemployment rate for each state from 2008-2025. For economic piece of hypothesis.
+- **Source**: [Enter link to source]()
+- **Sample Row**: *the row follows the following pattern: Year,Alaska,Arizona,Arkansas,California,Colorado,Florida,Hawaii,Idaho,Indiana,Kentucky,Maine,Michigan,Minnesota,Missouri,Montana,Nevada,New Mexico,North Carolina,North Dakota,Ohio,Oregon,South Carolina,South Dakota,Tennessee,Texas,Utah,Virginia,"Washington, D.C.",Washington,West Virginia,Wyoming,U.S. Territory,National
+  ```2008,6.5,5.8,5.4,7.3,4.8,6.3,4.1,5,5.9,6.5,5.4,8.2,5.5,6.2,4.7,6.9,4.4,5.9,3.1,6.6,6.3,6.9,3.1,6.5,4.9,3.3,4.1,6.5,5.2,4.5,3,null,5.8
+  ```
+  `**`src/data/NPS/annual_visits_2008_2024.csv**
+- **Topic**: Annual NPS Visits 2008-2024.
+- **Overview**: The annual number of visits to each park from 2008-2024. For the visitation portion of the hypothesis.
+- **Source**: [Enter link to source]()
+- **Sample Row**: These rows follow the same pattern seen above
+  ```csv
+ 2008,2075857,928795,845734,362512,686062,160185,1043321,436715,604811,400381,332177,104913,415686,2828233,871938,432309,63947,822118,11397,1954810,418911,1808027,4425314,2485987,69235,273903,9044010,163709,1185068,1270538,1238147,1833596,14038,1392446,7970,272190,574870,1565,6802,377361,446174,551446,1163227,1212854,18725,3081451,543714,166988,396899,2076466,2757390,699137,930011,1075878,516804,469034,221585,438511,573433,65693,3066580,3431514,2690154
+  ```
+  `**`src/data/NPS/full_parks_dataset .csv**
+- **Topic**: Full Parks Dataset.
+- **Overview**: More supplemental information about the parks, mainly relating to location.
+- **Source**: [Enter link to source]()
+- **Sample Row**:*the rows follow the following pattern: name,state,latitude,longitude,entranceFees*
+  ```csv
+  Acadia National Park,Maine,44.409286,-68.247501,yes
+  ```
+    `**`src/data/path/to/dataset.csv`**
+- **Topic**: NPS Park Fees.
+- **Overview**: Enter brief description for each dataset.
+- **Source**: [Enter link to source]()
+- **Sample Row**:
+  ```csv
+  enter,sample,row,here
+  1,2,3,"Hello world!"
+  ```
+    `**`src/data/path/to/dataset.csv`**
+- **Topic**: NPS Park Boundaries.
+- **Overview**: Enter brief description for each dataset.
+- **Source**: [Enter link to source]()
+- **Sample Row**:
+  ```csv
+  enter,sample,row,here
+  1,2,3,"Hello world!"
+  ```
+    `**`src/data/path/to/dataset.csv`**
+- **Topic**: NPS Parks by Activities.
+- **Overview**: Enter brief description for each dataset.
+- **Source**: [Enter link to source]()
+- **Sample Row**:
+  ```csv
+  enter,sample,row,here
+  1,2,3,"Hello world!"
+  ```
+    `**`src/data/path/to/dataset.csv`**
+- **Topic**: NPS Park Exception Hours.
+- **Overview**: Enter brief description for each dataset.
+- **Source**: [Enter link to source]()
+- **Sample Row**:
+  ```csv
+  enter,sample,row,here
+  1,2,3,"Hello world!"
+  ```
+    `**`src/data/path/to/dataset.csv`**
+- **Topic**: NPS Park Topics.
+- **Overview**: Enter brief description for each dataset.
+- **Source**: [Enter link to source]()
+- **Sample Row**:
+  ```csv
+  enter,sample,row,here
+  1,2,3,"Hello world!"
+  ```
 See the README for the dataset for more information.
 
 ## About the Data App
