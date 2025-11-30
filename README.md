@@ -12,7 +12,7 @@ Recent executive orders and defunding of departments and agencies in the federal
 
 ## About the Data
 
-**`src/data/path/to/dataset.csv`**
+<!-- **`src/data/path/to/dataset.csv`**
 - **Topic**: Enter broader topic of dataset.
 - **Overview**: Enter brief description for each dataset.
 - **Source**: [Enter link to source]()
@@ -20,7 +20,7 @@ Recent executive orders and defunding of departments and agencies in the federal
   ```csv
   enter,sample,row,here
   1,2,3,"Hello world!"
-  ```
+  ``` -->
 
 **`src/data/FRED/annual_gdp_by_state.csv`**
 - **Topic**: Annual GDP by State
@@ -54,51 +54,47 @@ Recent executive orders and defunding of departments and agencies in the federal
   ```csv
   Acadia National Park,Maine,44.409286,-68.247501,yes
   ```
-    `**`src/data/path/to/dataset.csv`**
+    `**`src/data/NPS/park_fees.csv`**
 - **Topic**: NPS Park Fees.
-- **Overview**: Enter brief description for each dataset.
+- **Overview**: A dataset of fees including what park, what tyoe of fee, the cost and a description.
 - **Source**: [Enter link to source]()
-- **Sample Row**:
+- **Sample Row**: name,feeType,cost,description
   ```csv
-  enter,sample,row,here
-  1,2,3,"Hello world!"
+ Acadia National Park,Entrance - Private Vehicle,35.00,"Valid for seven days. Admits private, non-commercial vehicle (15 passenger capacity or less) and all occupants. This includes rental cars, RVs, and vans with fewer than 16 passengers. If the vehicle pass is purchased, no other pass is necessary."
   ```
-    `**`src/data/path/to/dataset.csv`**
-- **Topic**: NPS Park Boundaries.
-- **Overview**: Enter brief description for each dataset.
-- **Source**: [Enter link to source]()
-- **Sample Row**:
-  ```csv
-  enter,sample,row,here
-  1,2,3,"Hello world!"
-  ```
-    `**`src/data/path/to/dataset.csv`**
+    `**`src/data/NPS/parks_by_activities.csv`**
 - **Topic**: NPS Parks by Activities.
-- **Overview**: Enter brief description for each dataset.
+- **Overview**: A List of national parks, their specific designation, activities at the park, and geographic information.
 - **Source**: [Enter link to source]()
-- **Sample Row**:
+- **Sample Row**: name,fullName,parkCode,parkID,designation,description,latitude,longitude,city,stateCode,postalCode,activities
   ```csv
-  enter,sample,row,here
-  1,2,3,"Hello world!"
+ Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from young and old, and the site of his childhood home.",37.5858662,-85.67330523,Hodgenville,KY,42748,Astronomy
   ```
-    `**`src/data/path/to/dataset.csv`**
+    `**`src/data/NPS/parks_by_exception_hours.csv`**
 - **Topic**: NPS Park Exception Hours.
-- **Overview**: Enter brief description for each dataset.
+- **Overview**: A list of national parks inlcuding dates and times the park is closed due to holidays, maintenance, emergencies, ect.
 - **Source**: [Enter link to source]()
-- **Sample Row**:
+- **Sample Row**: name,fullName,parkCode,parkID,designation,description,latitude,longitude,city,stateCode,postalCode,exceptionType,startDate,endDate
   ```csv
-  enter,sample,row,here
-  1,2,3,"Hello world!"
+  Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from young and old, and the site of his childhood home.",37.5858662,-85.67330523,Hodgenville,KY,42748,Park is Closed,2025-11-27,2025-11-27
   ```
-    `**`src/data/path/to/dataset.csv`**
+    `**`src/data/NPS/parks_by_topics.csv`**
 - **Topic**: NPS Park Topics.
-- **Overview**: Enter brief description for each dataset.
+- **Overview**: A list of national parks inlcuding tags for different topics that apply to each park.
 - **Source**: [Enter link to source]()
-- **Sample Row**:
+- **Sample Row**: name,fullName,parkCode,parkID,designation,description,latitude,longitude,city,stateCode,postalCode,topics
   ```csv
-  enter,sample,row,here
-  1,2,3,"Hello world!"
+  Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from 
   ```
+**`src/data/NPS/refactored_annual_visits.csv`**
+- **Topic**: The visitation of each par by year.
+- **Overview**: A simple to read list of each park by year with its total visitation number.
+- **Source**: [Enter link to source]()
+- **Sample Row**: year,park,visits
+  ```csv
+  2008,Acadia National Park,2075857
+  ```
+
 See the README for the dataset for more information.
 
 ## About the Data App
