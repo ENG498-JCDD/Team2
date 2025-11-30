@@ -1,14 +1,14 @@
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The app’s title; used in the sidebar and webpage titles.
-  title: "Team 2 - Update Me!",
+  title: "Team 2 - National Parks and Economic Struggle ",
 
   // The pages and sections in the sidebar. If you don’t specify this option,
   // all pages will be listed in alphabetical order. Listing pages explicitly
   // lets you organize them into sections and have unlisted pages.
   pages: [
     {
-      name: "Data Visualization - rename me?",
+      name: "Data Visualization",
       pages: [
         {name: "Dashboard", path: "/dashboard"},
         {name: "Report", path: "/report"},
