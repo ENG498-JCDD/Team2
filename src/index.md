@@ -4,7 +4,7 @@ Be sure to incorporate aspects of a SJ ethic and/or structuralist approach to th
 Be sure to also include an "About the Data" section. -->
 # National Parks and Economic Struggle  
 
-## Exigence & Problem
+## Exigence and Problem
 
 Recent executive orders and defunding of departments and agencies in the federal government have resulted in the depletion of resources available for the maintenance of parks and people employed by the National Park Service. Simultaneously, there is a recession (one could argue a depression) being felt throughout the United States. We believe that there could be a link between national parks visitation and economic difficulty. 
 
