@@ -39,7 +39,7 @@ We imagine that users could utelize our dashboard for the following...
 
 <!-- so we said that these are the following main findings...
 * Patterns vary regionally
-* east, midwest, north east (maybe south?) visitation increases when unemplyment falls (and usually when unemployment increases, GDP decreases)
+* east, midwest, north east (maybe south?) visitation increases when unemployment falls (and usually when unemployment increases, GDP decreases)
 * west, north west, visitation decreases when unemployment increases (opposite above)
 * heat map of cost? 
 * maybe add a subheading of affordability and include map here as well as in the dashboard? -->
