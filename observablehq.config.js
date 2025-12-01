@@ -12,17 +12,25 @@ export default {
       pages: [
         {name: "Dashboard", path: "/dashboard"},
         {name: "Report", path: "/report"},
-        {name: "Scratch Work", path: "/scratch-work"}
+        // {name: "Scratch Work", path: "/scratch-work"}
       ]
     },
-    {
-      name: "Testing Data",
+     {
+      name: "Project Information",
       pages: [
-        {name: "Test Data", path: "./processing-files/testing-data-output"},
-        {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
-        {name: "Test Plots", path: "./processing-files/test-plots"},
+        {name: "Read Me", path: "./README"},
+        // {name: "Report", path: "/report"},
+        // {name: "Scratch Work", path: "/scratch-work"}
       ]
-    }
+    },
+    // {
+    //   name: "Testing Data",
+    //   pages: [
+    //     {name: "Test Data", path: "./processing-files/testing-data-output"},
+    //     {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
+    //     {name: "Test Plots", path: "./processing-files/test-plots"},
+    //   ]
+    // }
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:

@@ -12,90 +12,85 @@ Recent executive orders and defunding of departments and agencies in the federal
 
 ## About the Data
 
-<!-- **`src/data/path/to/dataset.csv`**
-- **Topic**: Enter broader topic of dataset.
-- **Overview**: Enter brief description for each dataset.
-- **Source**: [Enter link to source]()
-- **Sample Row**:
-  ```csv
-  enter,sample,row,here
-  1,2,3,"Hello world!"
-  ``` -->
+const gdpData = FileAttachment("./data/FRED/annual_gdp_by_state.csv").csv({typed: true})
+const unEmpData = FileAttachment("./data/FRED/average_annual_unemployment_rate.csv").csv({typed: true})
+const annualVisits = FileAttachment("./data/NPS/annual_visits_2008_2024.csv").csv({typed: true})
+const fullParks = FileAttachment("./data/NPS/full_parks_dataset.csv").csv({typed: true})
+const parkFees = FileAttachment("./data/NPS/park_fees.csv").csv({typed: true})
 
 **`src/data/FRED/annual_gdp_by_state.csv`**
 - **Topic**: Annual GDP by State
 - **Overview**: The annual GDP for each state from 2008-2025. For economic piece of hypothesis.
-- **Source**: [Enter link to source]()
-- **Sample Row**: *the row follows the following pattern: "Year,Alaska,Arizona,Arkansas,California,Colorado,Florida,Hawaii,Idaho,Indiana,Kentucky,Maine,Michigan,Minnesota,Missouri,Montana,Nevada,New Mexico,North Carolina,North Dakota,Ohio,Oregon,South Carolina,South Dakota,Tennessee,Texas,Utah,Virginia,"Washington, D.C",Washington,West Virginia,Wyoming,U.S. Territory,National"*
-  ```csv
-  2008,55246.7,261005.8,100206.7,1946242,257606.1,767357.8,65545.5,56203.6,277774.5,160700.2,51001.9,391633.6,268771.5,256431.1,37028,130570.9,84339.7,420707.2,32027.7,500916.4,164122.9,164471.2,36939.3,255546.7,1253142,116949.2,402157.8,395698.808,352460.7,62978.7,42694.6,null,14769.862
-  ```
+- **Source**: [Annual GDP By State Dataset](src/data/FRED/annual_gdp_by_state.csv)
+- **Sample Row**: *the row follows the following pattern:* "Year,Alaska,Arizona,Arkansas,California,Colorado,Florida,Hawaii,Idaho,Indiana,Kentucky,Maine,Michigan,Minnesota,Missouri,Montana,Nevada,New Mexico,North Carolina,North Dakota,Ohio,Oregon,South Carolina,South Dakota,Tennessee,Texas,Utah,Virginia,"Washington, D.C",Washington,West Virginia,Wyoming,U.S. Territory,National"
+```csv
+2008,55246.7,261005.8,100206.7,1946242,257606.1,767357.8,65545.5,56203.6,277774.5,160700.2,51001.9,391633.6,268771.5,256431.1,37028,130570.9,84339.7,420707.2,32027.7,500916.4,164122.9,164471.2,36939.3,255546.7,1253142,116949.2,402157.8,395698.808,352460.7,62978.7,42694.6,null,14769.862
+```
 
   `**`src/data/FRED/average_annual_unemployment_rate.csv`**
 - **Topic**: Average Annual Unemployment Rate by State.
 - **Overview**: The annual average unemployment rate for each state from 2008-2025. For economic piece of hypothesis.
-- **Source**: [Enter link to source]()
-- **Sample Row**: *the row follows the following pattern: Year,Alaska,Arizona,Arkansas,California,Colorado,Florida,Hawaii,Idaho,Indiana,Kentucky,Maine,Michigan,Minnesota,Missouri,Montana,Nevada,New Mexico,North Carolina,North Dakota,Ohio,Oregon,South Carolina,South Dakota,Tennessee,Texas,Utah,Virginia,"Washington, D.C.",Washington,West Virginia,Wyoming,U.S. Territory,National
-  ```2008,6.5,5.8,5.4,7.3,4.8,6.3,4.1,5,5.9,6.5,5.4,8.2,5.5,6.2,4.7,6.9,4.4,5.9,3.1,6.6,6.3,6.9,3.1,6.5,4.9,3.3,4.1,6.5,5.2,4.5,3,null,5.8
-  ```
+- **Source**: [Average Annual Unemployment Rate By State Dataset](src/data/FRED/average_annual_unemployment_rate.csv)
+- **Sample Row**: *the row follows the following pattern:* Year,Alaska,Arizona,Arkansas,California,Colorado,Florida,Hawaii,Idaho,Indiana,Kentucky,Maine,Michigan,Minnesota,Missouri,Montana,Nevada,New Mexico,North Carolina,North Dakota,Ohio,Oregon,South Carolina,South Dakota,Tennessee,Texas,Utah,Virginia,"Washington, D.C.",Washington,West Virginia,Wyoming,U.S. Territory,National
+```csv
+2008,6.5,5.8,5.4,7.3,4.8,6.3,4.1,5,5.9,6.5,5.4,8.2,5.5,6.2,4.7,6.9,4.4,5.9,3.1,6.6,6.3,6.9,3.1,6.5,4.9,3.3,4.1,6.5,5.2,4.5,3,null,5.8
+```
   `**`src/data/NPS/annual_visits_2008_2024.csv**
 - **Topic**: Annual NPS Visits 2008-2024.
 - **Overview**: The annual number of visits to each park from 2008-2024. For the visitation portion of the hypothesis.
-- **Source**: [Enter link to source]()
-- **Sample Row**: These rows follow the same pattern seen above
-  ```csv
- 2008,2075857,928795,845734,362512,686062,160185,1043321,436715,604811,400381,332177,104913,415686,2828233,871938,432309,63947,822118,11397,1954810,418911,1808027,4425314,2485987,69235,273903,9044010,163709,1185068,1270538,1238147,1833596,14038,1392446,7970,272190,574870,1565,6802,377361,446174,551446,1163227,1212854,18725,3081451,543714,166988,396899,2076466,2757390,699137,930011,1075878,516804,469034,221585,438511,573433,65693,3066580,3431514,2690154
-  ```
-  `**`src/data/NPS/full_parks_dataset .csv**
+- **Source**: [Annual Visitation Dataset](src/data/NPS/annual_visits_2008_2024.csv)
+- **Sample Row**: *Each row follows the following pattern:* Year,Acadia National Park,Arches National Park,Badlands National Park,Big Bend National Park,Biscayne National Park,Black Canyon Of The Gunnison National Park,Bryce Canyon National Park,Canyonlands National Park,Capitol Reef National Park,Carlsbad Caverns National Park,Channel Islands National Park,Congaree National Park,Crater Lake National Park,Cuyahoga Valley National Park,Death Valley National Park,Denali National Park & Preserve,Dry Tortugas National Park,Everglades National Park,Gates Of The Arctic National Park & Preserve,Gateway Arch National Park,Glacier Bay National Park & Preserve,Glacier National Park,Grand Canyon National Park,Grand Teton National Park,Great Basin National Park,Great Sand Dunes National Park & Preserve,Great Smoky Mountains National Park,Guadalupe Mountains National Park,Haleakala National Park,Hawaiʻi Volcanoes National Park,Hot Springs National Park,Indiana Dunes National Park,Isle Royale National Park,Joshua Tree National Park,Katmai National Park & Preserve,Kenai Fjords National Park,Kings Canyon National Park,Kobuk Valley National Park,Lake Clark National Park & Preserve,Lassen Volcanic National Park,Mammoth Cave National Park,Mesa Verde National Park,Mount Rainier National Park,New River Gorge National Park & Preserve,North Cascades National Park,Olympic National Park,Petrified Forest National Park,Pinnacles National Park,Redwood National Park,Rock Creek Park,Rocky Mountain National Park,Saguaro National Park,Sequoia National Park,Shenandoah National Park,Theodore Roosevelt National Park,Virgin Islands National Park,Voyageurs National Park,White Sands National Park,Wind Cave National Park,Wrangell - St Elias National Park & Preserve,Yellowstone National Park,Yosemite National Park,Zion National Park
+```csv
+2008,2075857,928795,845734,362512,686062,160185,1043321,436715,604811,400381,332177,104913,415686,2828233,871938,432309,63947,822118,11397,1954810,418911,1808027,4425314,2485987,69235,273903,9044010,163709,1185068,1270538,1238147,1833596,14038,1392446,7970,272190,574870,1565,6802,377361,446174,551446,1163227,1212854,18725,3081451,543714,166988,396899,2076466,2757390,699137,930011,1075878,516804,469034,221585,438511,573433,65693,3066580,3431514,2690154
+```
+  `**`src/data/NPS/full_parks_dataset.csv**
 - **Topic**: Full Parks Dataset.
 - **Overview**: More supplemental information about the parks, mainly relating to location.
-- **Source**: [Enter link to source]()
+- **Source**: [Full Parks Dataset](src/data/NPS/full_parks_dataset.csv)
 - **Sample Row**:*the rows follow the following pattern: name,state,latitude,longitude,entranceFees*
   ```csv
   Acadia National Park,Maine,44.409286,-68.247501,yes
   ```
     `**`src/data/NPS/park_fees.csv`**
 - **Topic**: NPS Park Fees.
-- **Overview**: A dataset of fees including what park, what tyoe of fee, the cost and a description.
-- **Source**: [Enter link to source]()
+- **Overview**: A dataset of fees including what park, what type of fee, the cost and a description.
+- **Source**: [Park Fees Dataset](src/data/NPS/park_fees.csv)
 - **Sample Row**: name,feeType,cost,description
-  ```csv
- Acadia National Park,Entrance - Private Vehicle,35.00,"Valid for seven days. Admits private, non-commercial vehicle (15 passenger capacity or less) and all occupants. This includes rental cars, RVs, and vans with fewer than 16 passengers. If the vehicle pass is purchased, no other pass is necessary."
-  ```
+```csv
+Acadia National Park,Entrance - Private Vehicle,35.00,"Valid for seven days. Admits private, non-commercial vehicle (15 passenger capacity or less) and all occupants. This includes rental cars, RVs, and vans with fewer than 16 passengers. If the vehicle pass is purchased, no other pass is necessary."
+```
     `**`src/data/NPS/parks_by_activities.csv`**
 - **Topic**: NPS Parks by Activities.
 - **Overview**: A List of national parks, their specific designation, activities at the park, and geographic information.
-- **Source**: [Enter link to source]()
+- **Source**: [Parks and Activities Dataset](src/data/NPS/parks_by_activities.csv)
 - **Sample Row**: name,fullName,parkCode,parkID,designation,description,latitude,longitude,city,stateCode,postalCode,activities
-  ```csv
- Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from young and old, and the site of his childhood home.",37.5858662,-85.67330523,Hodgenville,KY,42748,Astronomy
-  ```
+```csv
+Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from young and old, and the site of his childhood home.",37.5858662,-85.67330523,Hodgenville,KY,42748,Astronomy
+```
     `**`src/data/NPS/parks_by_exception_hours.csv`**
 - **Topic**: NPS Park Exception Hours.
 - **Overview**: A list of national parks inlcuding dates and times the park is closed due to holidays, maintenance, emergencies, ect.
-- **Source**: [Enter link to source]()
+- **Source**: [Exception Hours Dataset](src/data/NPS/parks_by_exception_hours.csv)
 - **Sample Row**: name,fullName,parkCode,parkID,designation,description,latitude,longitude,city,stateCode,postalCode,exceptionType,startDate,endDate
-  ```csv
-  Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from young and old, and the site of his childhood home.",37.5858662,-85.67330523,Hodgenville,KY,42748,Park is Closed,2025-11-27,2025-11-27
-  ```
+```csv
+Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from young and old, and the site of his childhood home.",37.5858662,-85.67330523,Hodgenville,KY,42748,Park is Closed,2025-11-27,2025-11-27
+```
     `**`src/data/NPS/parks_by_topics.csv`**
 - **Topic**: NPS Park Topics.
 - **Overview**: A list of national parks inlcuding tags for different topics that apply to each park.
-- **Source**: [Enter link to source]()
+- **Source**: [Parks and Topics Dataset](src/data/NPS/parks_by_topics.csv)
 - **Sample Row**: name,fullName,parkCode,parkID,designation,description,latitude,longitude,city,stateCode,postalCode,topics
-  ```csv
-  Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from 
-  ```
+```csv
+Abraham Lincoln Birthplace,Abraham Lincoln Birthplace National Historical Park,abli,77E0D7F0-1942-494A-ACE2-9004D2BDC59E,National Historical Park,"For over a century people from around the world have come to rural Central Kentucky to honor the humble beginnings of our 16th president, Abraham Lincoln. His early life on Kentucky's frontier shaped his character and prepared him to lead the nation through Civil War. Visit our country's first memorial to Lincoln, built with donations from 
+```
 **`src/data/NPS/refactored_annual_visits.csv`**
 - **Topic**: The visitation of each par by year.
 - **Overview**: A simple to read list of each park by year with its total visitation number.
-- **Source**: [Enter link to source]()
+- **Source**: [Refactored Annual Visits](src/data/NPS/refactored_annual_visits.csv)
 - **Sample Row**: year,park,visits
-  ```csv
-  2008,Acadia National Park,2075857
-  ```
-
-See the README for the dataset for more information.
+```csv
+2008,Acadia National Park,2075857
+```
 
 ## About the Data App
 
