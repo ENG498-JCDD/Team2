@@ -60,6 +60,15 @@ National parks are a popular attraction among people both in and outside of the 
 
 For our dashboard, we have found data beginning in 2008, the beginning of the 2008 Financial Crisis (AKA "The Great Recession") which was caused by a crashing housing market in the United States that had world-wide implications. We thought beginning out data story here would allow users to get a thorough picture of the last nearly two decades of American economic highs and lows to compare to national park visitation and entry costs.
 
+<!-- ### Findings -->
+
+## Citations
+
+Are you interested in learning more about the National Park System? Head to these sites that we used to create this dashboard!
+
+* ["What a Government Shutdown Means for National Parks"](https://cnr.ncsu.edu/news/2025/10/what-a-government-shutdown-means-for-national-parks/#:~:text=National%20parks%20have%20long%20faced,that%20has%20persisted%20for%20decades.)
+* ["The Great Recession and Its Aftermath"](https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath)
+* ["Quick History of the National Park Service"](https://www.nps.gov/articles/quick-nps-history.htm)
 
 
 <!-- Things from example (disregard) -->
