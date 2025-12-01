@@ -10,16 +10,8 @@ export default {
     {
       name: "Data Visualization",
       pages: [
-        {name: "Dashboard", path: "/dashboard"},
-        {name: "Report", path: "/report"},
-        // {name: "Scratch Work", path: "/scratch-work"}
-      ]
-    },
-     {
-      name: "Project Information",
-      pages: [
-        {name: "Read Me", path: "./README"},
-        // {name: "Report", path: "/report"},
+        {name: "Project Overview", path: "/report"},
+        {name: "Data Dashboard", path: "/dashboard"},
         // {name: "Scratch Work", path: "/scratch-work"}
       ]
     },
