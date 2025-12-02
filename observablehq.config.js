@@ -12,17 +12,17 @@ export default {
       pages: [
         {name: "Project Overview", path: "/report"},
         {name: "Data Dashboard", path: "/dashboard"},
-        // {name: "Scratch Work", path: "/scratch-work"}
+        {name: "Scratch Work", path: "/scratch-work"}
       ]
     },
-    // {
-    //   name: "Testing Data",
-    //   pages: [
-    //     {name: "Test Data", path: "./processing-files/testing-data-output"},
-    //     {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
-    //     {name: "Test Plots", path: "./processing-files/test-plots"},
-    //   ]
-    // }
+    {
+      name: "Testing Data",
+      pages: [
+        {name: "Test Data", path: "./processing-files/testing-data-output"},
+        {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
+        {name: "Test Plots", path: "./processing-files/test-plots"},
+      ]
+    }
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:
@@ -30,6 +30,7 @@ export default {
 
   // The path to the source root.
   root: "src",
+  theme: "dark",
 
   // Some additional configuration options and their defaults:
   // theme: "default", // try "light", "dark", "slate", etc.

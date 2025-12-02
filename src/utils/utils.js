@@ -1,4 +1,4 @@
-import nlp from "compromise"
+// import nlp from "compromise"
 import {utcParse,utcFormat} from "d3-time-format"
 import {html} from "htl"
 

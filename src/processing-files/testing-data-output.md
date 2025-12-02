@@ -1,7 +1,7 @@
 # Testing Data Outputs
 ```js
 
-import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
+import {getUniquePropListBy, downloadAsCSV, filterData} from "./../utils/utils.js"
 
 ```
 
@@ -86,6 +86,7 @@ for (const park of parkArray) {
   }
 }
 ```
+parks with fees
 ```js
 parksWithFees
 ```
@@ -96,6 +97,7 @@ for (const park of annualVisits) {
   updatedNameVisits.push(park["Park Name"].replace("NP", "National Park"))
 }
 ```
+updated name
 ```js
 updatedNameVisits
 ```

@@ -429,3 +429,37 @@ Plot.plot({
   ]
 })
 ```
+
+
+```js
+const noFees = []
+for (const park of fullParks) {
+  // console.log(park.entranceFees) 
+  if (park.entranceFees == "no") {
+    noFees.push(park)
+  }
+  }
+```
+```js
+noFees
+```
+
+
+```js
+const parksWithFees = getUniquePropListBy(parkFees, "name")
+```
+```js
+parksWithFees
+```
+```js
+let newFeeArray = []
+for (const park of parksWithFees) {
+  let fees = []
+  for (const fee of parkFees) {
+    if (park == fee.name) {
+      fees.push(fee.cost)
+      
+    }
+  }
+}
+```

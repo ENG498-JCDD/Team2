@@ -1,5 +1,5 @@
 ---
-theme: dashboard
+
 title: National Park Visitation and Economic Turmoil
 toc: false
 ---
