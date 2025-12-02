@@ -24,3 +24,22 @@ Visits to national parks increase when there is economic instability in the coun
 ## Project Aims
 
 For our project, we wanted to highlight the importance of national parks as affordable and accessible attractions for americans, especially at a time when the funding and integrity of national parks is under fire by the current administration. We wanted to show users the relationship between our two economic metrics (state GDP and state unemployment) and the visitation rates across the past several years. We also supplied additional data to add to the context around these central relationships, such as ticket prices and geographic location. We hope users can use this dashboard to observe this relationship and simultaneously learn a little about national parks!
+
+### Scenarios for Use
+
+We imagine that users could utelize our dashboard for the following...
+
+* To make decisions about what national parks could be affordable and accessible for families with less spending money.
+* To learn more about the importance of national parks to american culture and history.
+* To research the connections between economic difficulty and national park visitation. 
+* To observe how availability of spending money affects access to culturally and ecologically important spaces. 
+* To glean some patterns that occur nationally regarding the relationship between national park visitation and state GDP/unemployment, and how or why those could be different (if they are). 
+
+## Conclusions and Patterns
+
+<!-- so we said that these are the following main findings...
+* Patterns vary regionally
+* east, midwest, north east (maybe south?) visitation increases when unemployment falls (and usually when unemployment increases, GDP decreases)
+* west, north west, visitation decreases when unemployment increases (opposite above)
+* heat map of cost? 
+* maybe add a subheading of affordability and include map here as well as in the dashboard? -->
