@@ -29,12 +29,6 @@ const visitsRefac = FileAttachment("./data/NPS/refactored_annual_visits.csv").cs
 Is there a link between national park visitation and economic difficulty? We believe there could be, because national parks could provide a low cost, engaging and memorable activity. Here, we present a case for the relationship between national park visitation, state GDP and state unemployment rates. 
 
 <!-- Load and transform the data -->
-
-```js
-const launches = FileAttachment("data/launches.csv").csv({typed: true});
-// change this to our data files/files
-```
-
 ```js
 const feeTypes = getUniquePropListBy(parkFees, "feeType")
 ```
@@ -78,15 +72,6 @@ const feeCentralTendencies = Array.from(
 )
 ```
 
-```js
-const color = Plot.scale({
-  color: {
-    type: "categorical",
-    domain: d3.groupSort(launches, (D) => -D.length, (d) => d.state).filter((d) => d !== "Other"),
-    unknown: "var(--theme-foreground-muted)"
-  }
-});
-```
 
 <!-- Cards with big numbers -->
 <!-- change these to reflect total numbers of park visitation, average cost for a trip for an individual, then maybe average cost for an average sized family? could be an opportunity for beginning story with the costs (prove its a fund cheap activity, also assert popularity)-->
