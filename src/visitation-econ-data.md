@@ -250,7 +250,8 @@ let gdpPlot = Plot.plot({
   </div>
    <div class="card">
     <h2>${stateSelect} GDP (2008-2024)</h2>
-    <p>The plot below shows the annual gross domestic product for ${stateSelect}. GDP compounds year after year, so the indicator of economic success is a steep increase in GDP, not necessarily the overall number. **Note:** Following the on-set of the COVID-19 pandemic, the federal government issued economic stimulus, which is a potential cause for the sharp spike in GDP growth for many of the featured states.</p>
+    <p>The plot below shows the annual gross domestic product for ${stateSelect}. GDP compounds year after year, so the indicator of economic success is a steep increase in GDP, not necessarily the overall number. </p>
+    <p><b>Note:</b> Following the on-set of the COVID-19 pandemic, the federal government issued economic stimulus, which is a potential cause for the sharp spike in GDP growth for many of the featured states.</p>
     ${gdpPlot}
   </div>
 </div>

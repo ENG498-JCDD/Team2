@@ -59,9 +59,7 @@ const avgfeeRollup = d3.rollup(
   d => d.name,
 )
 ```
-```js
-avgfeeRollup
-```
+
 ```js
 const avgFeeTendencies = Array.from(
  avgfeeRollup,
@@ -77,9 +75,6 @@ const avgFeeTendencies = Array.from(
   }
 )
 ```
-```js
-avgFeeTendencies
-```
 
 ```js
 const averageAndLocation = []
@@ -90,9 +85,6 @@ for (const park of fullParks) {
     }
   }
 }
-```
-```js
-averageAndLocation
 ```
 <!-- creating map -->
 ```js
