@@ -4,8 +4,8 @@ Since the scope  of our project if focusing only on national parks (the specific
 
 ```js
 
-import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
-import "us-state-converter" from npm
+import {getUniquePropListBy, downloadAsCSV, filterData} from "./../utils/utils.js"
+// import "us-state-converter" from npm
 
 ```
 
@@ -106,3 +106,4 @@ for (const each of fullParks.data) {
   }
 }
 ```
+
