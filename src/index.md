@@ -35,11 +35,3 @@ We imagine that users could utelize our dashboard for the following...
 * To observe how availability of spending money affects access to culturally and ecologically important spaces. 
 * To glean some patterns that occur nationally regarding the relationship between national park visitation and state GDP/unemployment, and how or why those could be different (if they are). 
 
-## Conclusions and Patterns
-
-<!-- so we said that these are the following main findings...
-* Patterns vary regionally
-* east, midwest, north east (maybe south?) visitation increases when unemployment falls (and usually when unemployment increases, GDP decreases)
-* west, north west, visitation decreases when unemployment increases (opposite above)
-* heat map of cost? 
-* maybe add a subheading of affordability and include map here as well as in the dashboard? -->

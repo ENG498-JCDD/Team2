@@ -12,7 +12,6 @@ export default {
       pages: [
         {name: "Project Overview", path: "/report"},
         {name: "Cost of Entry", path: "/cost-of-entry"},
-       
         {name: "Visitation and Economics", path: "/visitation-econ-data"},
         
       ]
