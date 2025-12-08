@@ -61,7 +61,6 @@ for (const park of fullParks) {
 }
 ```
 <!-- Finding Average Visits for Each Park -->
-
 ```js
 const visitsRollup = d3.rollup(
   visitsRefac,
@@ -257,3 +256,10 @@ let gdpPlot = Plot.plot({
 </div>
 
 <!-- PLOT INFO ENDS HERE -->
+
+## Conclusions - Economic Recovery and Park Visitation
+While our initial hypothesis suggested that there would be a link between periods of economic downturn and an increase in visitation rates, the data has proven that this is not the case. Rather it seems that there is an increase in visitation, not necessarily in the years of economic turmoil, but in the period directly following.
+
+The clearest example of this can be seen in the years following the COVID-19 pandemic. Across the board, the rate of visitation at most parks did increase and has been higher than average. 
+
+While this data only tells part of the story, we believe that the National Parks provide an outlet for Americans in times of economic recovery, if not in times of turmoil like we initially believed.

@@ -245,7 +245,14 @@ let feeSelection = view(
   )
 )
 ```
-<br>
+```js
+let parksListFiltered = noGroupFees.filter((d)=> d.dayType == feeSelection)
+
+let filteredParkNames = getUniquePropListBy(parksListFiltered, "name")
+
+let numOfParks = filteredParkNames.length
+```
+<b>${numOfParks} Parks</b> offer <b>${feeSelection}</b> entry.
 
 ```js
 const colOfInterest = "cost"
@@ -341,4 +348,11 @@ const feeTable = Inputs.table(noGroupFees.filter((d)=> d.dayType == feeSelection
 </div>
 
 
+## Conclusions -- Understanding Affordability
+While a majority of the national parks charge an entry fee (41 of the 63), 32 of these parks allow for multi-day entry into the parks. This means that on average it costs any visitor somewhere 1-3 dollars per day to visit a national park. 
 
+Additionally, most of the parks that charge entrance fees are closely clustered with other parks. Meaning, that when there are fewer options available in a particular region, the cost-based barriers to entry are lowered. This makes it somewhat easier for visitors in these regions to access these national services, even if they have to overcome barriers of proximity.
+
+In the same vein, in more remote areas of the country, such as a majority of the parks in Alaska, these barriers to cost are lowered  in terms of entry, making it easier for visitors to balance this against the cost of travel.
+
+Overall, the national parks provide a relatively affordable opportunity for visitors to engage with nature and history during their downtime.

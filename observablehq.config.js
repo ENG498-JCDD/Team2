@@ -12,7 +12,7 @@ export default {
       pages: [
         {name: "Project Overview", path: "/report"},
         {name: "Cost of Entry", path: "/cost-of-entry"},
-        // {name: "Data Dashboard", path: "/dashboard"},
+        // {name: "Data Dashboard", path: "/draft-dashboard"},
         {name: "Visitation and Economics", path: "/visitation-econ-data"},
         // {name: "Scratch Work", path: "/scratch-work"}
       ]
