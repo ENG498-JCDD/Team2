@@ -12,6 +12,7 @@ import {getUniquePropListBy, downloadAsCSV, filterData} from "./utils/utils.js"
 ```js
 //formatters
 const numberNoCommasFormatter = d3.format("")
+const roundForMoney = d3.format("$.2f")
 ```
 
 ```js
@@ -36,10 +37,64 @@ Is there a link between national park visitation and economic difficulty? We bel
 
 Use the map bellow to see if there is a free park near you!
 
+
 ```js
 const us = await fetch(import.meta.resolve("npm:us-atlas/counties-10m.json")).then((r) => r.json())
 const states = topojson.feature(us, us.objects.states)
 ```
+<!-- processing data and location -->
+```js
+const colOfInterest = "cost"
+const avgfeeRollup = d3.rollup(
+  noGroupFees,
+  leaf => {
+    return {
+      mean: d3.mean(leaf, l => l[colOfInterest]),
+      median: d3.median(leaf, l => l[colOfInterest]),
+      mode: d3.mode(leaf, l => l[colOfInterest]),
+      min: d3.min(leaf, l => l[colOfInterest]),
+      max: d3.max(leaf, l => l[colOfInterest]),
+    }
+  },
+  d => d.name,
+)
+```
+```js
+avgfeeRollup
+```
+```js
+const avgFeeTendencies = Array.from(
+ avgfeeRollup,
+  ([type, ctResults]) => {
+    return {
+      type: type,
+      mean: ctResults.mean,
+      median: ctResults.median,
+      mode: ctResults.mode,
+      min: ctResults.min,
+      max: ctResults.max,
+  }
+  }
+)
+```
+```js
+avgFeeTendencies
+```
+
+```js
+const averageAndLocation = []
+for (const park of fullParks) {
+  for (const fee of avgFeeTendencies) {
+    if (fee.type == park.name) {
+      averageAndLocation.push({name: park.name, longitude:park.longitude, latitude:park.latitude, averageCost:fee.mean})
+    }
+  }
+}
+```
+```js
+averageAndLocation
+```
+<!-- creating map -->
 ```js
 const mapOfFees = Plot.plot({
   height: 500,
@@ -52,20 +107,20 @@ const mapOfFees = Plot.plot({
   marks: [
     Plot.geo(states, {fill: "white",stroke: "var(--theme-foreground)", opacity: 0.25, }
     ),
-    Plot.dot(fullParks, 
+    Plot.dot(averageAndLocation, 
     {
       x: "longitude",
       y: "latitude",
-      title: (d) => d.name,
+      title: (d) => `${d.name} \n Average Cost of Entry: ${roundForMoney(d.averageCost)}`,
       tip: true,
-      fill: "entranceFees",
+      fill: "averageCost",
       r: 4,
       strokeWidth: 2,
     })
   ]
 })
 ```
-### Does this park charge an entry fee?
+### Whats the average cost to enter this park?
 ${mapOfFees}
 
 ---
@@ -146,7 +201,6 @@ const feeTendencies = Array.from(
 let carAverage;
 let cycleAverage;
 let personAverage;
-const roundForMoney = d3.format("$.2f")
 for (const each of feeTendencies) {
   if (each.type == "Entrance - Private Vehicle") {
     carAverage = roundForMoney(each.mean)
@@ -237,7 +291,6 @@ const feeSelectTendencies = Array.from(
 let carSelectAverage;
 let cycleSelectAverage;
 let personSelectAverage;
-const roundForMoney = d3.format("$.2f")
 for (const each of feeSelectTendencies) {
   if (each.type == "Entrance - Private Vehicle") {
     carSelectAverage = roundForMoney(each.mean)

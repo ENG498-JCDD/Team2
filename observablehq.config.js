@@ -14,7 +14,7 @@ export default {
         {name: "Cost of Entry", path: "/cost-of-entry"},
         {name: "Data Dashboard", path: "/dashboard"},
         {name: "Visitation and Economics", path: "/visitation-econ-data"},
-        // {name: "Scratch Work", path: "/scratch-work"}
+        {name: "Scratch Work", path: "/scratch-work"}
       ]
     },
     // {
