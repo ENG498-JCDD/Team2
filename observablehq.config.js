@@ -12,14 +12,16 @@ export default {
       pages: [
         {name: "Project Overview", path: "/report"},
         {name: "Cost of Entry", path: "/cost-of-entry"},
-        // {name: "Data Dashboard", path: "/draft-dashboard"},
+       
         {name: "Visitation and Economics", path: "/visitation-econ-data"},
-        // {name: "Scratch Work", path: "/scratch-work"}
+        
       ]
     },
     // {
     //   name: "Testing Data",
     //   pages: [
+    //     {name: "Scratch Work", path: "./processing-files/scratch-work"},
+    //     {name: "Data Dashboard", path: "./processing-files/draft-dashboard"},
     //     {name: "Test Data", path: "./processing-files/testing-data-output"},
     //     {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
     //     {name: "Test Plots", path: "./processing-files/test-plots"},
