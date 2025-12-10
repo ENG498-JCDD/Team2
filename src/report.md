@@ -2,6 +2,15 @@
 title: National Park Visitation and Economic Turmoil
 ---
 
+<!-- LINDGREN
+  Moved it up here, since they perform as global variables.
+-->
+```js
+const fullParks = FileAttachment("./data/NPS/full_parks_dataset.csv").csv({typed: true})
+const us = await fetch(import.meta.resolve("npm:us-atlas/counties-10m.json")).then((r) => r.json())
+const states = topojson.feature(us, us.objects.states)
+```
+
 # National Park Visitation and Economic Turmoil - an Overview
 
 The following report outlines the history, function, and recent attacks from captiol hill on national parks, as well as an exploration on how they provide entertainment and value to Americans, perhaps especially during times of economic difficulty. We hypothesize that visits to national parks increase when there is economic instability in the country, as they provide inexpensive forms of entertainment and enrichment to visitors. During a period of increasing economic and political uncertainty, it is important to highlight the values that publicly funded provide to society.
@@ -10,14 +19,32 @@ The following report outlines the history, function, and recent attacks from cap
 
 In 1872, Congress established the first national park, Yellowstone National Park, for the "benefit and enjoyment of the people". This sparked a movement worldwide to create national parks and preserves. Under the Department of the Interior in the years following Yellowstone's creation, more parks and monuments were created, providing employment opportunities to Americans. In 1916, President Woodrow Wilson signed the "The National Park Service Organic Act", creating the National Park Service within the Department of the Interior to protect and manage current and future national parks and monuments. Now, the National Park System runs over 400 areas over 84 million acres across the United States and its territories.
 
-### Map of U.S. National Parks
-<!-- START OF MAP CODE -->
-```js
-const fullParks = FileAttachment("./data/NPS/full_parks_dataset.csv").csv({typed: true})
-const us = await fetch(import.meta.resolve("npm:us-atlas/counties-10m.json")).then((r) => r.json())
-const states = topojson.feature(us, us.objects.states)
-```
+<!-- LINDGREN:
+  Fun little finding card pattern, so you can give presence to certain points.
+-->
+<div class="grid grid-cols-2 cards__findings">
 
+  <div class="card">
+    <p>
+      Total National Park Areas:
+      <br>
+      <span>400+</span>
+    </p>
+  </div>
+
+  <div class="card">
+    <p>
+      Total National Parks:
+      <br>
+      <span>${fullParks.length}</span>
+    </p>
+  </div>
+
+</div>
+
+### Map of U.S. National Parks
+
+<!-- START OF MAP CODE -->
 ```js
 Plot.plot({
   height: 500,
@@ -70,17 +97,4 @@ Are you interested in learning more about the National Park System? Head to thes
 * ["The Great Recession and Its Aftermath"](https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath)
 * ["Quick History of the National Park Service"](https://www.nps.gov/articles/quick-nps-history.htm)
 
-
-<!-- Things from example (disregard) -->
-<!-- ```js
-import {timeline} from "./components/timeline.js";
-``` -->
-
-<!-- ```js
-const events = FileAttachment("./data/events.json").json();
-``` -->
-
-<!-- ```js
-timeline(events, {height: 300})
-``` -->
-
+<!-- LINDGREN: Removed unused code patterns -->

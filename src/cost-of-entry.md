@@ -33,7 +33,21 @@ Is there a link between national park visitation and economic difficulty? We bel
 
 ---
 ## Free Parks
-**${noFeesCount}** of the 63 national parks **are completely free to visit** 
+
+<!-- LINDGREN:
+  Fun little finding card pattern, so you can give presence to certain points.
+-->
+<div class="grid grid-cols-2 cards__findings">
+
+  <div class="card">
+    <p>
+      <span class="big">${noFeesCount}</span> of the 63 national parks are completely free to visit.
+    </p>
+  </div>
+
+</div>
+
+<!-- **${noFeesCount}** of the 63 national parks **are completely free to visit**  -->
 
 Use the map bellow to see if there is a free park near you!
 
@@ -92,7 +106,14 @@ const mapOfFees = Plot.plot({
   height: 500,
   width: 700,
   color: {
-    scheme: "ylgnbu",
+    // scheme: "ylgnbu",
+    /** LINDGREN:
+     * The blues felt like they got lost
+     * among the overall dark theme energy.
+     * This yellow to red scheme pops a bit
+     * more from the dark theme.
+    **/
+    scheme: "ylorrd",
     legend: true,
   },
   projection: "albers-usa",
@@ -106,22 +127,32 @@ const mapOfFees = Plot.plot({
       title: (d) => `${d.name} \n Average Cost of Entry: ${roundForMoney(d.averageCost)}`,
       tip: true,
       fill: "averageCost",
-      r: 4,
-      strokeWidth: 2,
+      // LINDGREN: Create a new metric to account for free parks
+      r: (d) => d.averageCost + 1,
+      /** LINDGREN:
+       * Remove strokeWidth, which wasn't adding
+       * anything to the plot. Revised it to add
+       * a forest green stroke around the circles/dots
+      **/
+      stroke: "forestgreen",
     })
   ]
 })
 ```
-### Whats the average cost to enter this park?
-${mapOfFees}
 
----
+### Whats the average cost to enter this park?
+
+<!-- LINDGREN: Wrapped the plot in a div container to help with colored syntactic sugar -->
+<div class="grid">
+  ${mapOfFees}
+</div>
 
 ## Average Cost of Entry
-<!-- Data Processing -->
 
-
-
+<!-- Define: multiDay, singleDay, noFees, noGroupFees -->
+<!-- LINDGREN
+  NOTE: You could create an Map of objects, wherein your fee type is the key.
+-->
 ```js
 const multiDay = []
 const singleDay = []
@@ -148,16 +179,14 @@ for (const fee of parkFeesRefac) {
   }
 } 
 ```
+
 Entry type and cost varies from park to park, but visiting a national park is still relatively affordable. 
 
-Additionally, there are different kinds of entry:
-* Per Person - Covers the cost of entry for one individual. Often, this individual is entering the park on foot.
-* Private Vehicle - Covers the cost of entry to a park for all passengers in a standard size car
-* Motorcycle - Covers the cost of entry for the driver of a motorcycle and up to one passenger
+<!-- LINDGREN: Tried to show how to simplify your content, since your cards are doing the heavy lifting. -->
 
-<br>
+Additionally, there are different kinds of entry. The cards below provide the overall average price of entry by pass type:
 
-### Average Price of Entry by Pass Type
+<!-- feeRollup & feeTendencies -->
 ```js
 const colOfInterest = "cost"
 const feeRollup = d3.rollup(
@@ -173,8 +202,7 @@ const feeRollup = d3.rollup(
   },
   d => d.type,
 )
-```
-```js
+
 const feeTendencies = Array.from(
  feeRollup,
   ([type, ctResults]) => {
@@ -189,10 +217,10 @@ const feeTendencies = Array.from(
   }
 )
 ```
+
+<!-- carAverage, cycleAverage, personAverage -->
 ```js
-let carAverage;
-let cycleAverage;
-let personAverage;
+let carAverage, cycleAverage, personAverage;
 for (const each of feeTendencies) {
   if (each.type == "Entrance - Private Vehicle") {
     carAverage = roundForMoney(each.mean)
@@ -210,21 +238,28 @@ for (const each of feeTendencies) {
   <div class="card">
     <h2>Individual Entry -- Per Person</h2>
     <span class="big">${personAverage}</span>
+    <p>
+      Often, this individual is entering the park on foot.
+    </p>
   </div>
  <div class="card">
     <h2>Individual Entry -- Per Car</h2>
     <span class="big">${carAverage}</span>
+    <p>
+      Covers the cost of entry to a park for all passengers in a standard size car.
+    </p>
   </div>
   <div class="card">
     <h2>Individual Entry -- Motorcycle</h2>
     <span class="big">${cycleAverage}</span>
+    <p>
+      Covers the cost of entry for the driver of a motorcycle and up to one passenger
+    </p>
   </div>
 </div>
 
----
-
 ## Length of Stay
-<br>
+
 In addition to different kinds of entry, some parks offer multi-day entry with their admission fees. Others offer only single day entry.
 
 Use the dropdown below to view the average price of entry for multi-day and single-day entry, and to see the full details of entry passes.
@@ -232,8 +267,10 @@ Use the dropdown below to view the average price of entry for multi-day and sing
 
 
 ```js
-const feesArray = ["Multi-Day", "Single-Day", ]
+const feesArray = ["Multi-Day", "Single-Day",]
 ```
+
+<!-- feeSelection -->
 ```js
 let feeSelection = view(
   Inputs.select(
@@ -245,15 +282,25 @@ let feeSelection = view(
   )
 )
 ```
+
 ```js
 let parksListFiltered = noGroupFees.filter((d)=> d.dayType == feeSelection)
-
 let filteredParkNames = getUniquePropListBy(parksListFiltered, "name")
-
 let numOfParks = filteredParkNames.length
 ```
-<b>${numOfParks} Parks</b> offer <b>${feeSelection}</b> entry.
 
+<!-- LINDGREN: Presencing this result -->
+<div class="grid grid-cols-1">
+  <div class="card">
+    <p>
+      <span class="big">${numOfParks}</span> parks offer <strong>${feeSelection}</strong> entry.
+    </p>
+  </div>
+</div>
+
+<!-- <b>${numOfParks} Parks</b> offer <b>${feeSelection}</b> entry. -->
+
+<!-- feeSelectRollup -->
 ```js
 const colOfInterest = "cost"
 const feeSelectRollup = d3.rollup(
@@ -271,6 +318,8 @@ const feeSelectRollup = d3.rollup(
   d => d.type,
 )
 ```
+
+<!-- feeSelectTendencies array -->
 ```js
 const feeSelectTendencies = Array.from(
  feeSelectRollup,
@@ -286,10 +335,10 @@ const feeSelectTendencies = Array.from(
   }
 )
 ```
+
+<!-- carSelectAverage, cycleSelectAverage, personSelectAverage-->
 ```js
-let carSelectAverage;
-let cycleSelectAverage;
-let personSelectAverage;
+let carSelectAverage, cycleSelectAverage, personSelectAverage;
 for (const each of feeSelectTendencies) {
   if (each.type == "Entrance - Private Vehicle") {
     carSelectAverage = roundForMoney(each.mean)
@@ -302,7 +351,9 @@ for (const each of feeSelectTendencies) {
   }
 }
 ```
+
 ### Average Price of ${feeSelection} Entry by Type
+
 <div class="grid grid-cols-3">
   <div class="card">
     <h2><b>${feeSelection}</b> Individual Entry -- Per Person</h2>
@@ -318,8 +369,59 @@ for (const each of feeSelectTendencies) {
   </div>
 </div>
 
+<!-- LINDGREN: Create a filtered version to reuse, based on selections -->
 ```js
-const feeTable = Inputs.table(noGroupFees.filter((d)=> d.dayType == feeSelection), {columns: [
+const filteredNoGroupFees = noGroupFees.filter((d)=> d.dayType == feeSelection)
+```
+
+<!-- LINDGREN:
+  Consider how a plot + table could help you describe the variations in addition to the overall averages.
+-->
+```js
+Plot.plot({
+  y: {
+    domain: [0, (d3.max(filteredNoGroupFees, d => d.cost) + 5)]
+  },
+  grid: true,
+  legend: true,
+  marks: [
+    Plot.ruleY(
+      [d3.mean(filteredNoGroupFees, d => d.cost)],
+      {
+        strokeDasharray: [1, 3],
+        stroke: "yellow",
+        strokeWidth: 2,
+      }
+    ),
+    Plot.dot(
+      filteredNoGroupFees,
+      {
+        x: "type",
+        y: "cost",
+        fill: "name",
+        r: d => ((d.cost)*10),
+        tip: {
+          format: {
+            name: true,
+            cost: false,
+            type: false,
+            r: false,
+          }
+        }
+      }
+    )
+  ]
+})
+```
+
+<!-- feeTable -->
+```js
+const feeTable = Inputs.table(
+  // LINDGREN: Added filtered version for reusability
+  filteredNoGroupFees,
+  // noGroupFees.filter((d)=> d.dayType == feeSelection),
+  {
+    columns: [
       "name",
       "type",
       "cost",

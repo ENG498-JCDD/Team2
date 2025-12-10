@@ -30,7 +30,7 @@ export default {
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:
-  head: '<link rel="icon" href="observable.png" type="image/png" sizes="32x32">',
+  head: '<link rel="icon" href="observable.png" type="image/png" sizes="32x32"><link rel="stylesheet" href="style.css" />',
 
   // The path to the source root.
   root: "src",
@@ -39,7 +39,7 @@ export default {
   // Some additional configuration options and their defaults:
   // theme: "default", // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)
-  // footer: "Built with Observable.", // what to show in the footer (HTML)
+  footer: `Developed by Lily Soetebier and Josephine Kinsey | <a href="https://jcddtc.netlify.app/" target="_blank" rel="noopenner noreferrer">NCSU ENG 583 - Justice-Centered Data Design in TPC</a>`, // what to show in the footer (HTML)
   // sidebar: true, // whether to show the sidebar
   // toc: true, // whether to show the table of contents
   // pager: true, // whether to show previous & next links in the footer
