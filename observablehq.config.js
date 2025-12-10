@@ -13,20 +13,8 @@ export default {
         {name: "Project Overview", path: "/report"},
         {name: "Cost of Entry", path: "/cost-of-entry"},
         {name: "Visitation and Economics", path: "/visitation-econ-data"},
-        
       ]
     },
-    // {
-    //   name: "Testing Data",
-    //   pages: [
-    //     {name: "Scratch Work", path: "./processing-files/scratch-work"},
-    //     {name: "Data Dashboard", path: "./processing-files/draft-dashboard"},
-    //     {name: "Test Data", path: "./processing-files/testing-data-output"},
-    //     {name: "Filtering Data from Dr. Lindgren", path: "./processing-files/filtering-lindgren-data"},
-    //     {name: "Test Plots", path: "./processing-files/test-plots"},
-    //     {name: "Refactoring Fees", path: "./processing-files/refactor-fees"},
-    //   ]
-    // }
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:
