@@ -10,24 +10,32 @@ Recent executive orders and defunding of departments and agencies in the federal
 
 ## Hypothesis
 
-Visits to national parks increase when there is economic instability in the country as they provide inexpensive forms of entertainment. We measure this via State GDP and State Unemployment Rate
+Visits to national parks increase when there is economic instability in the country as they provide inexpensive forms of entertainment. We measure this via State GDP and State Unemployment Rate.
 
 ### Specifying Questions
 
 1. "How do trends in state unemployment align with trends in NPS visitation?"
-   - Data display ideas: using line graphs to display the changes in unemployment rates and NPS visitation over time in months.
+    - *Data display ideas*: using line graphs to display the changes in unemployment rates and NPS visitation over time in months.
 2.  "How do trends in State GDP align with trends in NPS visitation?"
-    - Data display ideas: using line graphs to display the changes in unemployment rates and NPS visitation over time in months.
+    - *Data display ideas*: using line graphs to display the changes in unemployment rates and NPS visitation over time in months.
 3.  "How do trends in State GDP align with trends in state unemployment"
-    - Data display ideas: using line graphs to display GDP and state unemployment overlaid or side by  side so patterns could be observed.
+    - *Data display ideas*: using line graphs to display GDP and state unemployment overlaid or side by  side so patterns could be observed.
 
 ## Project Aims
 
-For our project, we wanted to highlight the importance of national parks as affordable and accessible attractions for americans, especially at a time when the funding and integrity of national parks is under fire by the current administration. We wanted to show users the relationship between our two economic metrics (state GDP and state unemployment) and the visitation rates across the past several years. We also supplied additional data to add to the context around these central relationships, such as ticket prices and geographic location. We hope users can use this dashboard to observe this relationship and simultaneously learn a little about national parks!
+<!-- LINDGREN
+  Revised the format here for readability
+-->
+
+We hope users can use this dashboard to observe the below relationships and simultaneously learn a little about US National Parks!
+
+1. Highlight the importance of national parks as affordable and accessible attractions for Americans; especially at a time when the funding and integrity of national parks is under fire by the current administration.
+2. Identify potential relationships between *park visitation* and two economic metrics: *state GDP* and *state unemployment*.
+3. Add richer context around these central relationships, such as *ticket prices* and *geographic location*.
 
 ### Scenarios for Use
 
-We imagine that users could utelize our dashboard for the following...
+We imagine that users could utilize our dashboard for the following...
 
 * To make decisions about what national parks could be affordable and accessible for families with less spending money.
 * To learn more about the importance of national parks to american culture and history.
@@ -35,3 +43,4 @@ We imagine that users could utelize our dashboard for the following...
 * To observe how availability of spending money affects access to culturally and ecologically important spaces. 
 * To glean some patterns that occur nationally regarding the relationship between national park visitation and state GDP/unemployment, and how or why those could be different (if they are). 
 
+<!-- Missing the reflection portion that integrate concepts from the readings -->

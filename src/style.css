@@ -1,0 +1,27 @@
+/* TYPOGRAPHY */
+
+/* Line Spacing */
+h2 {
+  /* You seemed to want this spacing, since I spotted <br> elements :-) */
+  margin: 2.5rem 0 1rem 0;
+}
+h3 {
+  margin: 1.75rem 0 0.25rem 0;
+}
+
+/* LAYOUT */
+@container (min-width: 560px) {
+  .grid-cols-2-3.econ-visits {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-cols-2-3.econ-visits .grid-colspan-2 {
+    grid-column: span 2;
+  }
+}
+
+@container (min-width: 840px) {
+  .grid-cols-2-3.econ-visits {
+    grid-template-columns: 1fr 2fr;
+    grid-auto-flow: column;
+  }
+}
